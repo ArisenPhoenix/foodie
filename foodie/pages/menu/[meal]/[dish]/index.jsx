@@ -11,7 +11,6 @@ const Dish = () => {
   const updateDish = foodCtx.updateDish;
   const setCurrentMeal = foodCtx.setCurrentMeal;
 
-  console.log("DISH INDEX PAGE CURRENT MEAL: ", currentMeal);
   if (currentMeal.dish) {
     authCtx.lastMeal.save(currentMeal, "DISH INDEX PAGE");
   }

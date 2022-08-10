@@ -2,7 +2,6 @@ import { save_error, save_log } from "../../Helpers/save_err_logs_to_db";
 
 const get_credentials = async (req, res) => {
   const api = "/api/get_credentials";
-  console.log(api);
   let data = req.body;
 
   try {

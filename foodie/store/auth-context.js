@@ -18,7 +18,6 @@ import css from "./auth-context.module.css";
 
 let logoutTimeout;
 let remainingTime;
-console.log("hi");
 
 const AuthContext = createContext({
   token: "",
