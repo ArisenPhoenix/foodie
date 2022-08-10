@@ -4,6 +4,7 @@ import FoodContext from "../../store/food-context";
 import AuthGuard from "../../Helpers/AuthGuard/AuthGuard";
 
 const AddNewDishPage = (props) => {
+  console.log("add");
   const foodCtx = useContext(FoodContext);
   const menu = [
     foodCtx.breakfast,
