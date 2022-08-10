@@ -71,7 +71,7 @@
 
 # FINE PRINT:
 
-## This is definitely a final product but it is usable and technically doesn't require more.
+## This is definitely not a final producti in terms of my vision for what it could be but it is usable and technically doesn't require more.
 
 ## There will probably be functionality updates to it or perhaps if i feel like doing more refactoring I might make a wrapper function for the apis because that's a lot of WET REWRITTEN AND TIRED code in there. I made a MONGO MODULE FUNCTION for solving this but it doesn't take care of the try{}catch{} statements or the other stuff that's just reused....
 
