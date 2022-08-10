@@ -83,8 +83,6 @@ const Home = (props) => {
         }
       }
     });
-    // console.log("newList,", newList);
-    // console.log("a_shoppingList,", a_shoppingList);
   }, [a_shoppingList]);
 
   return (
@@ -113,41 +111,3 @@ const Home = (props) => {
 };
 
 export default Home;
-
-// useEffect(() => {
-//   const newList = a_shoppingList.map((item, index, a_shoppingList) => {
-//     if (
-//       a_shoppingList &&
-//       typeof a_shoppingList[index] !== "undefined" &&
-//       typeof a_shoppingList[index + 1] !== "undefined" &&
-//       item &&
-//       typeof item.ingredient !== "undefined"
-//     ) {
-//       if (
-//         a_shoppingList[index + 1] &&
-//         a_shoppingList[index + 1].ingredient &&
-//         item.ingredient.trim() === a_shoppingList[index + 1].ingredient.trim()
-//       ) {
-//         const item1 = item;
-//         const item2 = a_shoppingList[index + 1];
-
-//         const totalNumber = item1.number + item2.number;
-//         const price = item.price;
-
-//         const newItem = {
-//           ...item,
-//           number: totalNumber,
-//           total: price * totalNumber,
-//         };
-//         finalTry.push(newItem);
-//         return newItem;
-//       }
-//     }
-//   });
-//   console.log(newList);
-//   setShoppingList(a_shoppingList);
-// }, [
-//   a_shoppingList[a_shoppingList.length],
-//   a_shoppingList.length,
-//   // final_shoppingList,
-// ]);

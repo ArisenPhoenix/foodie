@@ -58,67 +58,6 @@ const Signup = () => {
       return null;
     }
   };
-  // const addUserHandler = SIGN_LOG_IN_FETCH;
-
-  // const addUserHandler = async (enteredData) => {
-  //   const sendToData = JSON.stringify(enteredData);
-  //   let data;
-  //   // Posting Data From Server Fetching Information
-  //   try {
-  //     data = await fetch("/api/signup", {
-  //       method: "POST",
-  //       body: sendToData,
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-  //     if (data.errors) {
-  //       return null;
-  //     }
-  //   } catch (error) {
-  //     console.log("There was an error posting data to the server...");
-  //     return null;
-  //   }
-
-  //   console.log("newData Has Arrived Below:");
-  //   // Deciding if fetched data is error prone...
-  //   try {
-  //     const signInData = await data.json();
-  //     if (!signInData.error) {
-  //       setError(null);
-  //       const mergedData = {
-  //         ...enteredData,
-  //         ...signInData,
-  //       };
-  //       const loginData = await loginHandler(mergedData);
-
-  //       for (let i = 0; i < setStates.length - 1; i++) {
-  //         setStates[i]("");
-  //       }
-  //       return loginData;
-  //     } else {
-  //       const err = signInData.error.message;
-  //       if (err === "EMAIL_EXISTS") {
-  //         setError(
-  //           "There is already an account associated with that email, please sign-up using a different email or try loggin in."
-  //         );
-  //       } else if (err.includes("WEAK_PASSWORD")) {
-  //         console.log("WEAK_PASSWORD");
-  //         setError(
-  //           "Please make sure your password is at least 6 characters long, preferrably longer, and add symbols."
-  //         );
-  //       } else {
-  //         console.log("SOME_OTHER_ATROCITY");
-  //         setError(err);
-  //         setIsLoading(false);
-  //       }
-  //       setIsLoading(false);
-  //       return null;
-  //     }
-  //   } catch (error) {
-  //     return null;
-  //   }
-  // };
 
   const formSubmitHandler = async (event) => {
     event.preventDefault();
@@ -148,7 +87,6 @@ const Signup = () => {
         new Date().getTime() + +data.expiresIn * 1000
       );
       authCtx.login(token, userName, expirationTime);
-      // router.push("/menu");
     }
     setIsLoading(false);
   };
