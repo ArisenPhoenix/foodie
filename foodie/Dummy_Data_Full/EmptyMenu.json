@@ -1,0 +1,33 @@
+[
+  {
+    "breakfast": {
+      "meal": " breakfast",
+      "entrees": [],
+      "sides": []
+    },
+
+    "lunch": {
+      "meal": "lunch",
+      "entrees": [],
+      "sides": []
+    },
+
+    "dinner": {
+      "meal": "dinner",
+      "entrees": [],
+      "sides": []
+    },
+
+    "snack": {
+      "meal": "snack",
+      "entrees": [],
+      "sides": []
+    },
+
+    "dessert": {
+      "meal": "dessert",
+      "entrees": [],
+      "sides": []
+    }
+  }
+]

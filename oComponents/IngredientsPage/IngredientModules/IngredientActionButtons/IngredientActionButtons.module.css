@@ -1,0 +1,32 @@
+.edit,
+.edit2,
+.delete {
+  width: 40% !important;
+  border-radius: 7px;
+  z-index: 0;
+}
+
+.mainDiv {
+  /* display: inline; */
+  width: 80% !important;
+}
+
+.delete {
+  background-color: rgba(165, 42, 42, 0.816);
+  color: white;
+  /* margin-right: 2%; */
+  font-weight: bolder;
+  float: left;
+}
+
+.edit {
+  background-color: burlywood;
+  color: black;
+  font-weight: bolder;
+}
+
+.edit2 {
+  background-color: rgba(13, 139, 13, 0.76);
+  color: white;
+  font-weight: bolder;
+}

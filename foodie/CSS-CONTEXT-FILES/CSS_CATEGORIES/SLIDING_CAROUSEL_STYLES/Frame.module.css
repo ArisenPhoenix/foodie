@@ -1,0 +1,191 @@
+.all {
+  background-color: inherit;
+  width: 100%;
+}
+
+.containerTop {
+  display: block;
+  background-color: inherit;
+  width: 100%;
+}
+
+.containerMid {
+  background-color: inherit;
+  background-color: inherit;
+  display: inline;
+  width: 100%;
+  border-style: solid;
+  border-width: 4px;
+  border-color: red !important;
+}
+
+.containerBottom {
+  background-color: inherit;
+  width: auto;
+  /*  */
+  border-color: bisque;
+}
+
+.swipeContainer {
+  background-color: inherit !important;
+  display: inline-block !important;
+  width: 70%;
+  white-space: pre;
+}
+
+.frame {
+  background-color: inherit;
+  display: inline-flex;
+  width: 100%;
+  white-space: none;
+  margin-bottom: 3%;
+}
+
+.name {
+  background-color: inherit;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.notHidden {
+  display: inline-block;
+}
+
+/* Test New Style Slider */
+
+.slide {
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 100%;
+  scroll-snap-align: start;
+  white-space: nowrap;
+}
+
+/* @supports (scroll-snap-type) {
+  .slider a {
+    display: none;
+  }
+} */
+
+.slide > div:target {
+  transform: scale(0.8);
+}
+
+.testFillerDiv {
+  display: block;
+}
+
+.slider {
+  background-color: inherit;
+  display: inline;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  flex-direction: row-reverse;
+  flex-basis: 100%;
+  flex-shrink: 1;
+}
+
+/* width */
+.slider::-webkit-scrollbar {
+  height: 20px !important;
+  scroll-padding-block-end: 2px !important;
+}
+
+/* TrackBar */
+.slider::-webkit-scrollbar-track {
+  background: rgb(146, 41, 2);
+  height: 1px !important;
+  width: 1px !important;
+  border-radius: 20px;
+}
+
+/* Handle */
+.slider::-webkit-scrollbar-thumb {
+  background: red;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.slider::-webkit-scrollbar-track-piece {
+  scroll-padding-block-end: 2px !important;
+}
+
+/* Handle on hover */
+.slider::-webkit-scrollbar-thumb:hover {
+  background: rgb(119, 54, 10);
+  border-radius: 15px;
+  height: 1px !important;
+  width: 1px !important;
+  flex-direction: row;
+}
+
+.slider::-webkit-scrollbar-track:hover {
+  padding: 2px;
+  border-radius: 20px;
+}
+
+/* Light Theme */
+
+.slider2 {
+  background-color: inherit;
+  display: inline;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  flex-direction: row-reverse;
+  flex-basis: 100%;
+  flex-shrink: 1;
+}
+
+/* width */
+.slider2::-webkit-scrollbar {
+  height: 20px !important;
+  scroll-padding-block-end: 2px !important;
+}
+
+/* TrackBar */
+.slider2::-webkit-scrollbar-track {
+  background: inherit;
+  height: 1px !important;
+  width: 1px !important;
+  border-radius: 20px;
+}
+
+/* Handle */
+.slider2::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 20px;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.slider2::-webkit-scrollbar-track-piece {
+  scroll-padding-block-end: 2px !important;
+}
+
+/* Handle on hover */
+.slider2::-webkit-scrollbar-thumb:hover {
+  background: white;
+  border-radius: 20px;
+  flex-direction: row;
+}
+
+.slider2::-webkit-scrollbar-track:hover {
+  padding: 2px;
+  height: 1px !important;
+  width: 1px !important;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  .slider2::-webkit-scrollbar {
+    display: none;
+  }
+}

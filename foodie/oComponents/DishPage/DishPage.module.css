@@ -1,0 +1,26 @@
+.buttonDelete {
+  float: right !important;
+  width: 35% !important;
+}
+
+.buttonEdit {
+  width: 35% !important;
+}
+
+.buttonEdit,
+.buttonDelete {
+  background-color: darkmagenta !important;
+}
+
+.buttonContainer {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+@media screen and (max-width: 450px) {
+  .buttonDelete,
+  .buttonEdit {
+    width: 40% !important;
+  }
+}

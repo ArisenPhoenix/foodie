@@ -1,0 +1,30 @@
+.carousel {
+  background-color: black !important;
+}
+
+.header {
+  color: white;
+}
+
+.price {
+  color: red;
+}
+
+.detail {
+  color: blue !important;
+}
+
+.model {
+  text-align: center;
+  color: blue;
+}
+
+.dimensions {
+  color: green;
+  display: inline;
+}
+
+.dimensionsHeader {
+  color: peru;
+  float: left;
+}

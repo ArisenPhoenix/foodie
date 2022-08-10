@@ -1,0 +1,12 @@
+.sizing {
+  width: 50px;
+  height: auto;
+  margin: auto;
+}
+
+.sm {
+  color: white !important;
+  text-align: center !important;
+  vertical-align: baseline !important;
+  margin: auto !important;
+}

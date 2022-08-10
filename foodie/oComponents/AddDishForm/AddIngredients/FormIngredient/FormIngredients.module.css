@@ -1,0 +1,54 @@
+.ingredientsDiv {
+  display: block !important;
+  width: 100% !important;
+  margin: auto !important;
+  text-align: left;
+}
+
+.table {
+  width: 80%;
+  margin: auto;
+  border-style: solid !important;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+}
+
+.tableIngredient {
+  border-style: solid;
+  text-align: left;
+}
+
+.tablePrice {
+  border-style: solid;
+  text-align: left;
+}
+
+.th {
+  width: 50%;
+  border-style: solid;
+  border-width: 1px;
+  text-align: left;
+}
+
+.labelDiv {
+  width: 100%;
+  margin: auto;
+  text-align: left;
+}
+
+.mainLabel {
+  text-align: left !important;
+}
+
+.button {
+  background-color: cyan !important;
+  color: black;
+}
+
+.tdI {
+  margin-left: 2%;
+}
+
+.tdP {
+  margin-right: 2%;
+}

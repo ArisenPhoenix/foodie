@@ -1,0 +1,88 @@
+.container1 {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: inherit;
+}
+
+div.card {
+  display: flex;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 360px 100px 100px 360px;
+  min-height: 20vh;
+  background-color: #c1c0b9;
+}
+
+.image {
+  border-radius: 360px;
+}
+
+.description {
+  margin-top: 2%;
+  justify-content: left;
+  font-size: 1.5rem;
+}
+
+.container2 {
+  width: 70%;
+  background-color: inherit;
+}
+
+p.card {
+  font-size: larger;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.block {
+  width: 50%;
+  border-width: 1rem;
+  margin: auto;
+  padding: 1rem;
+  border: 1rem !important;
+  background-color: #537791;
+
+  border-radius: 360px;
+}
+
+.details {
+  margin: auto 10% auto 10%;
+}
+
+@media only screen and (max-width: 767px) {
+  .container1 {
+    display: block;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  div.card {
+    display: block;
+    margin: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 360px 360px 100px 100px;
+  }
+
+  .block {
+    width: 100%;
+    min-width: fit-content;
+    margin: auto;
+  }
+
+  .container2 {
+    min-width: fit-content;
+  }
+
+  .description {
+    margin-top: 2%;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .details {
+    margin: auto 10% auto 10%;
+  }
+}

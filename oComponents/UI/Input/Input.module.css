@@ -1,0 +1,13 @@
+.input input {
+  margin-bottom: 20px;
+  width: 90%;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.input label {
+  font-weight: bold;
+  margin-right: 1rem;
+}
