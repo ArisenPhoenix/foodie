@@ -2,6 +2,20 @@
   border-width: 4px;
   border-radius: 12px;
   padding: 4px;
+  padding-top: 0 !important;
+}
+
+.show {
+  width: inherit;
+  margin: 0;
+  padding: 0;
+  border-style: solid;
+  background-color: rgb(233, 217, 155);
+  border-color: rgb(233, 217, 155);
+  border-width: 1px;
+  border-radius: 8px;
+  height: 50px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
 }
 
 .table {

@@ -1,51 +1,40 @@
 import ToBuy from "./ToBuy/ToBuy";
 import css from "./GroceryList.module.css";
 import { Fragment, useEffect, useState } from "react";
+import {
+  formatIngredients,
+  grandTotaler,
+  numberTallier,
+} from "../../../Helpers/ShoppingList/Numbers";
 import PostButton from "../../UI/Button/PostButton/PostButton";
 import Card from "../../UI/Card/Card";
 
+const om = {
+  1: ["price"],
+  2: ["number"],
+  3: ["ingredient"],
+  4: ["total"],
+};
 const GroceryList = (props) => {
   const [ingredients, setIngredients] = useState(props.ingredients);
-
   const printPage = () => {
     print();
   };
 
   useEffect(() => {
-    const formattedIngredients = props.ingredients.filter(
-      (numberObj, ingredient) => {
-        const item = ingredient.ingredient;
-        const price =
-          numberObj.price === "" ||
-          numberObj.price === "undefined" ||
-          numberObj.price === null
-            ? (numberObj.price = 1)
-            : +numberObj.price;
+    const formattedIngredients = formatIngredients(props.ingredients, om);
 
-        const number =
-          typeof numberObj.number === "number" && numberObj.number > 0
-            ? numberObj.number
-            : 1;
-
-        const totalPrice = number * price;
-        if (ingredient.ingredient === "undefined") {
-          return;
-        }
-        return (
-          (numberObj["total"] = totalPrice),
-          (numberObj["price"] = +numberObj["price"])
-        );
-      },
-      {}
-    );
     setIngredients(formattedIngredients);
   }, [props.ingredients]);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [totalIndiPrice, setTotalIndiPrice] = useState(0);
   const [grandTotal, setGrandTotal] = useState(0);
   const [numberOfItems, setNumberOfItems] = useState(0);
-  const [itemNumber, setItemNumber] = useState({});
+  const [seeTotal, setSeeTotal] = useState("Total");
+
+  const toggleButton = () => {
+    seeTotal === "Total" ? setSeeTotal("Price") : setSeeTotal("Total");
+  };
 
   const checkIngredient = (line, index, id) => {
     const fixedIngredients = ingredients;
@@ -62,83 +51,24 @@ const GroceryList = (props) => {
   };
 
   useEffect(() => {
-    const price =
-      ingredients &&
-      ingredients.reduce((total, iPrice) => {
-        const price = iPrice.price;
-        if (price === "undefined" || price === undefined || price.length > 6) {
-          return total + 0;
-        } else {
-          return total + price;
-        }
-      }, 0);
+    const grand = grandTotaler(ingredients, om);
+    const numberOfItems = numberTallier(ingredients, om);
 
-    const grand =
-      ingredients &&
-      ingredients.reduce((total, iPrice) => {
-        const price = iPrice.price;
-        const number = iPrice.number;
-        if (number === NaN || price === NaN) {
-        }
-
-        if (
-          price === "undefined" ||
-          price === undefined ||
-          price.length > 6 ||
-          price === NaN ||
-          number === NaN
-        ) {
-          return total + 0;
-        } else {
-          return total + price * number;
-        }
-      }, 0);
-
-    const numberOfItems =
-      ingredients &&
-      ingredients.reduce((total, iPrice) => {
-        const number = iPrice.number;
-        if (price === "undefined" || price === undefined || price.length > 6) {
-          return total + 0;
-        } else {
-          return total + number;
-        }
-      }, 0);
-
-    const numberOfItems2 = ingredients.filter((numberObj, ingredient) => {
-      const item = ingredient.ingredient;
-      const price =
-        numberObj.price === "" ||
-        numberObj.price === "undefined" ||
-        numberObj.price === null
-          ? (numberObj.price = 1)
-          : +numberObj.price;
-
-      const number =
-        typeof numberObj.number === "number" && numberObj.number > 0
-          ? numberObj.number
-          : 1;
-
-      const totalPrice = number * price;
-      const itemName = numberObj[item];
-      return (
-        (numberObj["total"] = totalPrice),
-        (numberObj["price"] = +numberObj["price"])
-      );
-    }, {});
-
-    setItemNumber(numberOfItems2);
     setNumberOfItems(numberOfItems);
     setGrandTotal(grand);
-    setTotalIndiPrice(price);
   }, [ingredients]);
 
   return (
     <div className={css.main}>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <h1>Retreiving a New Schedule</h1>
       ) : ingredients && ingredients.length > 0 ? (
         <Card className={css.card}>
+          <PostButton
+            className={css.show}
+            text={`See ${seeTotal === "Total" ? "Prices" : "Totals"}`}
+            onClick={toggleButton}
+          />
           <table className={css.table}>
             <tbody className={css.tbody}>
               <tr key="Grocery List Table Index" className={css.tr}>
@@ -149,12 +79,15 @@ const GroceryList = (props) => {
                 <th className={css.priceTh}>
                   <p>#</p>
                 </th>
-                {/* <th className={css.amountTh}>
-                  <p>Price</p>
-                </th> */}
-                <th className={css.amountTh}>
-                  <p>Total</p>
-                </th>
+                {seeTotal === "Total" ? (
+                  <th className={css.amountTh}>
+                    <p>Total</p>
+                  </th>
+                ) : (
+                  <th className={css.amountTh}>
+                    <p>Price</p>
+                  </th>
+                )}
               </tr>
 
               {ingredients.map((ingredient, index) => {
@@ -167,6 +100,7 @@ const GroceryList = (props) => {
                         key={`${ingredient._id} | ${index}`}
                         id={ingredient.id}
                         line={index + 1}
+                        show={seeTotal}
                         total={ingredient.total}
                         price={ingredient.price}
                         cur={props.cur}
@@ -205,7 +139,7 @@ const GroceryList = (props) => {
                 >
                   <p>
                     {props.cur}
-                    {grandTotal.toFixed(2)}
+                    {grandTotal}
                   </p>
                 </th>
               </tr>
