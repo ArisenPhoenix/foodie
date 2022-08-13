@@ -1,6 +1,6 @@
 import ToBuy from "./ToBuy/ToBuy";
 import css from "./GroceryList.module.css";
-import { Fragment, useEffect, useState, useContext } from "react";
+import { Fragment, useEffect, useState } from "react";
 import PostButton from "../../UI/Button/PostButton/PostButton";
 import Card from "../../UI/Card/Card";
 
@@ -28,7 +28,6 @@ const GroceryList = (props) => {
             : 1;
 
         const totalPrice = number * price;
-        const itemName = numberObj[item];
         if (ingredient.ingredient === "undefined") {
           return;
         }
@@ -51,8 +50,6 @@ const GroceryList = (props) => {
   const checkIngredient = (line, index, id) => {
     const fixedIngredients = ingredients;
     delete fixedIngredients[index];
-    // console.log(index);
-
     props.setIngredients((prev) => {
       return fixedIngredients;
     });
@@ -150,10 +147,13 @@ const GroceryList = (props) => {
                   <p>Ingredient</p>
                 </th>
                 <th className={css.priceTh}>
-                  <p>Price</p>
+                  <p>#</p>
                 </th>
+                {/* <th className={css.amountTh}>
+                  <p>Price</p>
+                </th> */}
                 <th className={css.amountTh}>
-                  <p>Amount</p>
+                  <p>Total</p>
                 </th>
               </tr>
 

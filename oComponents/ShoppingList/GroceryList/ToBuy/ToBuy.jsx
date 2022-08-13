@@ -1,8 +1,6 @@
 import css from "./ToBuy.module.css";
-import { useContext } from "react";
-import FoodContext from "../../../../store/user-context";
+
 const ToBuy = (props) => {
-  const foodCtx = useContext(FoodContext);
   const currency = props.cur;
   const deleter = (event) => {
     event.preventDefault();
@@ -14,16 +12,21 @@ const ToBuy = (props) => {
       <td className={css.td}>
         <p className={css.p}>{props.ingredient}</p>
       </td>
-      <td className={css.price}>
+      <td className={css.td}>
+        <p className={css.p}>{props.number}</p>
+      </td>
+
+      {/* <td className={css.price}>
         <p className={css.p}>
           {currency}
           {props.price}
         </p>
-      </td>
+      </td> */}
 
       <td className={css.td}>
         <p className={css.p}>
-          {currency} {Math.round(props.total)}
+          {currency}
+          {props.total}
         </p>
       </td>
     </tr>
