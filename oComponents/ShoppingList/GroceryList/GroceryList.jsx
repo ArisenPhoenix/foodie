@@ -35,8 +35,7 @@ const GroceryList = (props) => {
     seeTotal === "Total" ? setSeeTotal("Price") : setSeeTotal("Total");
   };
 
-  const checkIngredient = (index, ingredient) => {
-    console.log(ingredient);
+  const checkIngredient = (index) => {
     setIngredients((prev) => {
       prev.splice(index, 1);
       return [...prev];

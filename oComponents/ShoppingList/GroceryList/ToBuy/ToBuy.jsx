@@ -5,11 +5,10 @@ const ToBuy = (props) => {
   const currency = props.cur;
   const deleter = (event) => {
     event.preventDefault();
-    props.onClick(props.index, props.ingredient);
+    props.onClick(props.index);
   };
 
   let total = props.total;
-  // console.log(total);
 
   if (String(total).length > 5) {
     total = longDecimalFix(total, 2);
