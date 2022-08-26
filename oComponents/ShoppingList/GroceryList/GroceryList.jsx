@@ -23,7 +23,6 @@ const GroceryList = (props) => {
 
   useEffect(() => {
     const formattedIngredients = formatIngredients(props.ingredients, om);
-
     setIngredients(formattedIngredients);
   }, [props.ingredients]);
 
@@ -36,11 +35,11 @@ const GroceryList = (props) => {
     seeTotal === "Total" ? setSeeTotal("Price") : setSeeTotal("Total");
   };
 
-  const checkIngredient = (line, index, id) => {
-    const fixedIngredients = ingredients;
-    delete fixedIngredients[index];
-    props.setIngredients((prev) => {
-      return fixedIngredients;
+  const checkIngredient = (index, ingredient) => {
+    console.log(ingredient);
+    setIngredients((prev) => {
+      prev.splice(index, 1);
+      return [...prev];
     });
   };
 
@@ -53,7 +52,6 @@ const GroceryList = (props) => {
   useEffect(() => {
     const grand = grandTotaler(ingredients, om);
     const numberOfItems = numberTallier(ingredients, om);
-
     setNumberOfItems(numberOfItems);
     setGrandTotal(grand);
   }, [ingredients]);

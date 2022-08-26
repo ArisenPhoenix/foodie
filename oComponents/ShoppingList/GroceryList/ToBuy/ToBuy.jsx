@@ -5,7 +5,7 @@ const ToBuy = (props) => {
   const currency = props.cur;
   const deleter = (event) => {
     event.preventDefault();
-    props.onClick(props.line, props.index, props.id);
+    props.onClick(props.index, props.ingredient);
   };
 
   let total = props.total;
