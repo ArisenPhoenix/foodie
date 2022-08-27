@@ -1,5 +1,5 @@
 .footer {
-  display: inline-block !important;
+  display: block !important;
   width: 100%;
   margin-top: 2vh !important;
   border-top: 1px solid #eaeaea;
@@ -73,6 +73,7 @@ footer.footer a:hover {
 }
 
 .placement {
+  display: block !important;
   left: 0;
   bottom: 0;
   right: 0;

@@ -8,8 +8,6 @@ import Form3 from "../AddDishForm/Components/Form/Form3";
 import FoodContext from "../../store/food-context";
 
 const DishPage = (props) => {
-  console.log("DISH PAGE: ", props);
-  // console.log(props);
   if (!props.mealData.dish) {
     return null;
   }
@@ -17,7 +15,6 @@ const DishPage = (props) => {
   const ingredientList = foodCtx.allIngredients;
   const data = props.mealData;
   const router = useRouter();
-  // console.log("DISH PAGE: ", props);
 
   const [edit, setEdit] = useState("false");
   const [editText, setEditText] = useState("Edit");
@@ -29,7 +26,6 @@ const DishPage = (props) => {
     props.updateDish(update_data);
     const redirect = `/menu/${router.query.meal}`;
     const meal = update_data.meal;
-    console.log("update_data,", update_data);
     const index = meal.index;
     const dishType = data.dishType;
 
@@ -101,7 +97,7 @@ const DishPage = (props) => {
   };
 
   return (
-    <Fragment>
+    <div className={css.main}>
       {data ? (
         <Fragment>
           <Modal
@@ -115,14 +111,14 @@ const DishPage = (props) => {
           />
           <div className={css.buttonContainer}>
             <Button
-              text="Delete"
-              onClick={confirm}
-              className={`btn btn-secondary ${css.buttonDelete}`}
-            />
-            <Button
               text={editText}
               onClick={pushEdit}
               className={`btn btn-secondary ${css.buttonEdit}`}
+            />
+            <Button
+              text="Delete"
+              onClick={confirm}
+              className={`btn btn-secondary ${css.buttonDelete}`}
             />
           </div>
           {editText === "Cancel" ? (
@@ -158,7 +154,7 @@ const DishPage = (props) => {
       ) : (
         <h1>Please Try Again.</h1>
       )}
-    </Fragment>
+    </div>
   );
 };
 

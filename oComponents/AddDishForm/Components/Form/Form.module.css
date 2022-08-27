@@ -1,4 +1,9 @@
+.main {
+  margin-top: 50px;
+}
+
 .spacer {
+  display: inline;
   height: 1px;
   margin-top: 50px;
 }

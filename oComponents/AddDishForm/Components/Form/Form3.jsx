@@ -101,7 +101,7 @@ const Form3 = (props) => {
   });
 
   return (
-    <Fragment>
+    <div className={css.main}>
       <div className={css.spacer}>
         <Card className={css.card}>
           <form onSubmit={compileAllDataForUpdate} className="form">
@@ -171,7 +171,7 @@ const Form3 = (props) => {
           </form>
         </Card>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
