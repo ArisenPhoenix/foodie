@@ -116,7 +116,7 @@ export const organizeMeals = (mealClassChoice, number) => {
           : allIngredients.push([]);
       });
     });
-  // console.log("allIngredients,", allIngredients);
+
   return [dailyList, allIngredients];
 };
 
