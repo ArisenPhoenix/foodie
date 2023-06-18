@@ -1,4 +1,4 @@
-# Foodie Web App
+<h1 style="text-align:center;"> Foodie Web App
 
 ## Test Account info:
 
