@@ -1,0 +1,230 @@
+/* Setting Up Universal Values */
+
+/* all are absolute */
+.left,
+.right,
+.topLeft,
+.topRight,
+.bottomLeft,
+.bottomRight,
+.centerInPlace,
+.centerFull,
+.absoluteCenter,
+.absoluteCenterFull,
+.fillBottom,
+.fillTop,
+.fillLeft,
+.fillRight,
+.centerFull,
+.centerHalf,
+.centerLeft,
+.centerRight,
+.moveUp10,
+.moveUp20,
+.moveUp30,
+.moveUp40,
+.moveUp50,
+.moveUp60,
+.moveUp70,
+.moveUp80,
+.moveUp90,
+.moveUp100 .moveDown10,
+.moveDown20,
+.moveDown30,
+.moveDown40,
+.moveDown50,
+.moveDown60,
+.moveDown70,
+.moveDown80,
+.moveDown90,
+.moveDown100 {
+  position: absolute;
+  z-index: 99;
+  text-align: center;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+}
+
+/* left: 0 */
+
+.left,
+.topLeft,
+.bottomLeft,
+.absoluteCenter,
+.absoluteCenterFull,
+.centerHalf,
+.centerFull,
+.fillTop,
+.fillBottom,
+.fillLeft,
+.centerLeft {
+  left: 0;
+}
+
+/* right: 0 */
+.right,
+.topRight,
+.bottomRight,
+.absoluteCenter,
+.absoluteCenterFull,
+.centerHalf,
+.centerFull,
+.fillTop,
+.fillTop,
+.fillBottom,
+.fillRight,
+.centerRight {
+  right: 0;
+}
+
+/* top: 0 */
+
+.topLeft,
+.topRight,
+.fillTop,
+.fillRight,
+.fillLeft {
+  top: 0;
+}
+
+/* bottom: 0 */
+.bottomLeft,
+.bottomRight,
+.fillBottom,
+.fillLeft,
+.fillRight {
+  bottom: 0;
+}
+
+.centerInPlace {
+  left: 50;
+  right: 50;
+  top: 50;
+  bottom: 50;
+}
+
+.absoluteCenter {
+  top: 50%;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+.absoluteCenterFull {
+  top: 50%;
+}
+
+.centerHalf {
+  width: 50%;
+}
+
+/* X Axis Simple */
+
+.centerRight,
+.centerLeft {
+  top: 50%;
+  height: 25%;
+  vertical-align: middle;
+  text-align: center;
+  transform: translateY(-175%);
+  bottom: 0;
+}
+
+.absoluteBottom {
+  position: relative;
+  /* bottom: 0;
+  left: 0;
+  right: 0; */
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/*  */
+
+/*  */
+
+.moveDown10 {
+  transform: translateY(10px);
+}
+
+.moveDown20 {
+  transform: translateY(20px);
+}
+
+.moveDown30 {
+  transform: translateY(30px);
+}
+
+.moveDown40 {
+  transform: translateY(40px);
+}
+
+.moveDown50 {
+  transform: translateY(50px);
+}
+
+.moveDown60 {
+  transform: translateY(60px);
+}
+
+.moveDown70 {
+  transform: translateY(70px);
+}
+
+.moveDown80 {
+  transform: translateY(80px);
+}
+
+.moveDown90 {
+  transform: translateY(90px);
+}
+
+.moveDown100 {
+  transform: translateY(100px);
+}
+
+/* Move Up */
+
+.moveUp10 {
+  transform: translateY(-10px);
+}
+
+.moveUp20 {
+  transform: translateY(-20px);
+}
+
+.moveUp30 {
+  transform: translateY(-30px);
+}
+
+.moveUp40 {
+  transform: translateY(-40px);
+}
+
+.moveUp50 {
+  transform: translateY(-50px);
+}
+
+.moveUp60 {
+  transform: translateY(-60px);
+}
+
+.moveUp70 {
+  transform: translateY(-70px);
+}
+
+.moveUp80 {
+  transform: translateY(-80px);
+}
+
+.moveUp90 {
+  transform: translateY(-90px);
+}
+
+.moveUp100 {
+  transform: translateY(-100px);
+}

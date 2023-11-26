@@ -1,0 +1,88 @@
+.flipY180 {
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin-bottom: 30px;
+  background-color: inherit;
+}
+
+.flipY90 {
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin-bottom: 30px;
+  background-color: inherit;
+}
+
+.threeD {
+  transition: transform 2000ms;
+  transform-style: preserve-3d;
+}
+
+.twoD {
+  transform-style: flat;
+}
+
+.flipY180:hover .inner3D,
+.innerFlat {
+  transform: rotateY(180deg);
+}
+
+.flipY90:hover .innerFlat,
+.inner3D {
+  transform: rotateY(90deg);
+}
+
+.inner3D {
+  transform-style: preserve-3d;
+}
+
+.innerFlat,
+.inner3D {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1000ms;
+  transform-style: preserve-3d;
+}
+
+/* SIDE STYLES */
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* MOST INNER SECTION ____ IT'S A DIV */
+
+.card {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 25px 5px rgba(238, 227, 27, 0.164);
+  border-radius: 10px;
+  border-style: inset;
+  transition-property: inset;
+  position: absolute;
+  border-color: transparent !important;
+}
+
+.card:hover {
+  transition-property: unset;
+  transition-duration: 500ms;
+  transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+}
+
+.card:active {
+  box-shadow: inset 0 0 25px 5px rgba(244, 117, 6, 0.174);
+  width: 98%;
+  transition-timing-function: linear;
+  transition-duration: 100ms;
+}

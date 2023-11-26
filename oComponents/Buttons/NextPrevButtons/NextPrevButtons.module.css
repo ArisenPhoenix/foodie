@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    display: block;
+}
+
+.div {
+    display: inline-block;
+}
+
+.leftSide {
+    float: left;
+}
+
+.rightSide {
+    float: right;
+}
+
+.leftSide, .rightSide {
+    background-color: pink;
+}

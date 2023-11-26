@@ -1,0 +1,11 @@
+.main {
+  display: block;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 5%;
+  background-color: rgba(250, 235, 215, 0.189);
+  height: 100%;
+  /* overflow-y: scroll; */
+  position: relative;
+
+}

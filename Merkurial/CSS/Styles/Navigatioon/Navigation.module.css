@@ -1,0 +1,81 @@
+@import url("../../root.module.css");
+/* @import url("../../Themes/root.module.css"); */
+
+.wrapperSpacing {
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  margin-top: var(--navHeight);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 2;
+  right: 2;
+}
+
+.navDiv {
+  padding: 1% 2%;
+  /* height: 3rem; */
+  height: 90%;
+  margin: auto;
+}
+
+.navGroup {
+  font-size: var(--navTextSize);
+  height: var(--navHeight);
+}
+
+.navGroup a {
+  text-decoration: none;
+}
+
+.nav {
+  height: var(--navHeight);
+  margin-left: 1rem;
+}
+
+.navMain {
+  height: var(--navHeight);
+}
+
+.brand {
+  width: 3.5rem;
+  height: inherit !important;
+}
+
+.dropDownButton {
+  display: absolute;
+  width: 2rem;
+  height: inherit !important;
+}
+
+.inherit {
+  height: inherit;
+}
+
+.dropDownContainer {
+  z-index: 99;
+}
+
+@media screen and (min-width: 2000px) {
+  .brand {
+    width: 5rem;
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  .brand {
+    width: 8rem;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  .brand {
+    width: 10rem;
+  }
+  .nav {
+    height: var(--navHeight);
+    margin-left: 4rem;
+  }
+}

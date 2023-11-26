@@ -1,30 +1,20 @@
 import FoodContext from "../../../../store/food-context";
-import AuthContext from "../../../../store/auth-context";
+import SiteContext from "../../../../store/site_context";
 import { useContext } from "react";
-import DishPage from "../../../../oComponents/DishPage/DishPage";
-import AuthGuard from "../../../../Helpers/AuthGuard/AuthGuard";
+import EditOrViewDishPage from "../../../../oComponents/DishPage/EditOrViewDishPage";
+import AUTH_GUARD from "../../../../Merkurial/Auth/AUTH";
 
 const Dish = () => {
-  const authCtx = useContext(AuthContext);
-  const foodCtx = useContext(FoodContext);
-  const currentMeal = foodCtx.currentMeal;
-  const updateDish = foodCtx.updateDish;
-  const setCurrentMeal = foodCtx.setCurrentMeal;
-
-  console.log("DISH INDEX PAGE CURRENT MEAL: ", currentMeal);
-  if (currentMeal.dish) {
-    authCtx.lastMeal.save(currentMeal, "DISH INDEX PAGE");
-  }
+  const siteCtx = useContext(SiteContext);
+  const foodCtx = useContext(FoodContext)
 
   return (
-    <AuthGuard currentMeal={currentMeal}>
-      <DishPage
-        mealData={currentMeal}
-        updateDish={updateDish}
-        deleteDish={foodCtx.deleteDish}
-        setCurrentMeal={setCurrentMeal}
+    <AUTH_GUARD needsLoggedIn={true} needsUser={true}>
+      <EditOrViewDishPage
+        dishData={siteCtx.lastDishData}
+        allIngredients={foodCtx.allIngredients}
       />
-    </AuthGuard>
+    </AUTH_GUARD> 
   );
 };
 

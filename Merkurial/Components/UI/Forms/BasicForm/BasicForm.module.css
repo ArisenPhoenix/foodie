@@ -1,0 +1,41 @@
+.divClass {
+  width: 90%;
+  margin: auto;
+  border-style: solid;
+  border-top: inset;
+  border-bottom: inset;
+  min-height: 40vh;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.form {
+  width: 80%;
+  margin: auto;
+}
+
+.button {
+  width: 50%;
+  border-radius: 8px;
+}
+
+.buttonDiv {
+  width: 75%;
+  margin: auto;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  border-radius: 10px;
+  border-color: black;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}

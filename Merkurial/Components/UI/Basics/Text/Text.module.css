@@ -1,0 +1,10 @@
+.textBox {
+  text-align: left;
+  text-indent: 1rem;
+  padding: 1%;
+}
+
+.TextArea {
+  width: inherit;
+  height: inherit;
+}

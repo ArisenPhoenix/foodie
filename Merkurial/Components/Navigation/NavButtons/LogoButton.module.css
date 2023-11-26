@@ -1,0 +1,21 @@
+.logoButton {
+  display: flex;
+  position: relative;
+  border-radius: 0.5rem;
+  background-color: rgba(145, 68, 13, 0.854);
+  color: rgb(186, 166, 166);
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  border-style: solid;
+  box-shadow: inset gray;
+  border-width: 2px;
+  height: 3rem;
+  width: 3.8rem;
+}
+
+.button {
+  height: 3rem;
+  color: white;
+  border-radius: 8px;
+}

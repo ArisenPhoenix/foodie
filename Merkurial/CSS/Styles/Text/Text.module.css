@@ -1,0 +1,65 @@
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.verticalUp {
+  vertical-align: top;
+}
+
+.verticalDown {
+  vertical-align: bottom;
+}
+
+.verticalCenter {
+  vertical-align: baseline;
+}
+
+.jRight {
+  justify-content: right;
+  justify-items: left;
+}
+
+.jLeft {
+  justify-content: left;
+  justify-items: left;
+}
+
+.paragraphIndent {
+  text-indent: 3rem !important;
+}
+
+.xxsm {
+  font-size: xx-small;
+}
+
+.xsm {
+  font-size: x-small;
+}
+
+.sm {
+  font-size: small;
+}
+
+.md {
+  font-size: medium;
+}
+
+.lg {
+  font-size: large;
+}
+
+.xlg {
+  font-size: x-large;
+}
+
+.xxlg {
+  font-size: xx-large;
+}

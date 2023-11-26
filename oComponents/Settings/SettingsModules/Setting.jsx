@@ -1,56 +1,86 @@
 import css from "./Setting.module.css";
 import SettingActions from "./SettingActions/SettingActions";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import Input from "../../../oComponents/UI/Input/Input";
-import UserContext from "../../../store/user-context";
+import BasicFormHandler from "../../../Merkurial/Helpers/ChangeHandlers/Forms";
 import Modal from "../../UI/Modal/Modal0";
+import SELECTION from "../../../Merkurial/Components/UI/Basics/SELECTION/SELECTION"
+import EditableInput from "../../../Merkurial/Components/UI/Basics/INPUT_LABEL/Inputs/EditableInput";
+import { useToggleText, useToggleTextTimeout } from "../../../Merkurial/hooks/Toggle";
+import Label from "../../../Merkurial/Components/UI/Basics/INPUT_LABEL/Labels/Label";
+
+const sexOptions = ["Male", "Female", "X"]
 
 const Setting = (props) => {
-  const userCtx = useContext(UserContext);
-  const [edit, setEdit] = useState("cancel");
-  const [orSetting, setOrSetting] = useState(props.setting);
-  const [newSetting, setNewSetting] = useState(props.setting);
+  const key = props.keyData
+  const key2 = key.toLowerCase().trim()
+  const type = key2 == "password" ? "password" : typeof orSetting == "number" ? "number" : "text"
+  const defaultValue = key2 == "sex" ? sexOptions.find((value) => value[0].toLowerCase() == String(props.setting).toLowerCase()) : props.setting
+  const [edit, toggleEdit, setEdit, isEditing] = useToggleText("edit", "cancel", false)
+  const [orSetting, setOrSetting] = useState(defaultValue);
+  const [newSetting, setNewSetting] = useState(defaultValue);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
+  const [error, setError] = useToggleTextTimeout("Update Failed", false , false, 2000)
 
   const closeUpdateModal = () => {
     setShowUpdateModal(false);
   };
 
-  const editHandler = () => {
-    if (edit === "edit") {
-      setEdit("cancel");
-    } else {
-      setEdit("edit");
-    }
-  };
 
   const handleChange = (e) => {
-    console.log("handling change");
     e.preventDefault();
-    const name = e.target.id;
-    const value = e.target.value;
-    name === "newSetting" && setNewSetting(value);
+    const setObject = key2 == "sex" || key2 == "currency" ? {
+      [key2]: {setState: setNewSetting}
+    } : {
+      [key2]: {setState: setNewSetting}
+    }
+    BasicFormHandler(e, setObject)
   };
 
   const verifyUpdate = () => {
     setShowUpdateModal(true);
   };
 
+  const saveSettingLocally = props.saveSettingLocally
+
   const UpdateHandler = async (e) => {
     e.preventDefault();
     setShowUpdateModal(false);
-    setEdit("cancel");
-    setOrSetting(newSetting);
-    const update = {
-      ...userCtx,
-      [props.category]: {
-        ...userCtx[props.category],
-        [props.objKey]: newSetting,
-      },
-    };
-    await props.updateSetting(update);
+    toggleEdit()
+    const defaultType = typeof defaultValue
+    const castSetting = defaultType === "number" ? Number(newSetting) : defaultType === "boolean" ? Boolean(newSetting) : newSetting
+    console.log("CAST SETTING: ", castSetting)
+    const isGood = saveSettingLocally(key, defaultValue, castSetting)
+    console.log("IS GOOD: ", isGood)
+    !isGood && setNewSetting(orSetting)
+    !isGood && setError()
   };
+
+
+  const SEX = edit !== "edit" ? <Label text={newSetting} name={key2} className={css.sexLabel}/> : <SELECTION 
+  value={newSetting} 
+  name={key2} 
+  autoComplete={key2}
+  onChange={handleChange} 
+  default="Select One" 
+  options={sexOptions}
+/>
+
+
+  const InputType = key2 == "sex" 
+  ? SEX
+
+  : <EditableInput
+      value={newSetting}
+      type={type}
+      onChange={handleChange}
+      id={key2}
+      name={key2}
+      className={css.input}
+      autoComplete={key2}
+      contenteditable={edit === "edit" ? true : false}
+      onDoubleClick={() => {toggleEdit(true)}}
+    />
 
   return (
     <div
@@ -67,36 +97,22 @@ const Setting = (props) => {
       <Modal
         show={showUpdateModal}
         title="Warning!"
-        message={`Are You Sure You Want To Update${newSetting} for ${userCtx.cur}${orSetting}?`}
+        message={`Are You Sure You Want To Update From ${orSetting} To ${newSetting}?`}
         okayButton="Update"
         closeButton="Cancel"
         handleNo={closeUpdateModal}
         handleYes={UpdateHandler}
       />
       <Row>
-        <Col xs="7" md="6">
-          {edit === "edit" ? (
-            <Input
-              input={{
-                value: newSetting,
-                separate: "false",
-                onChange: handleChange,
-                id: "newSetting",
-                className: css.input,
-              }}
-            />
-          ) : (
-            <h3 id="orSetting" className={css.input}>
-              {orSetting}
-            </h3>
-          )}
+        <Col xs="7" md="7">
+          {InputType} {error && error}
         </Col>
-        <Col xs="5" md="6">
+        <Col xs="5" md="5">
           <SettingActions
             data={props}
             leftText={edit === "edit" ? "Cancel" : "Edit"}
             rightText="Update"
-            onLeft={editHandler}
+            onLeft={toggleEdit}
             onRight={verifyUpdate}
             className={css.actionButtons}
           />

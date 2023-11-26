@@ -1,16 +1,10 @@
-import css from "./home.module.css";
 import ShoppingList from "../../oComponents/ShoppingList/ShoppingList";
 import FoodContext from "../../store/food-context";
-import { useContext, useEffect, useState, Fragment } from "react";
-import { useRouter } from "next/router";
+import { useContext } from "react";
+import AUTH_GUARD from "../../Merkurial/Auth/AUTH";
 
 const Home = (props) => {
   const foodCtx = useContext(FoodContext);
-  const router = useRouter();
-
-  const goToSignUP = () => {
-    router.push("/transferSignup");
-  };
 
   const otherDays = 3;
   const weeklyDays = 7;
@@ -18,7 +12,6 @@ const Home = (props) => {
   const showMeals = false;
   const showMealType = false;
 
-  // Classes For Meal Module & Below
   const entreeClasses = {};
   const entreeListClasses = { entree: entreeClasses };
   const sideClasses = {};
@@ -42,7 +35,7 @@ const Home = (props) => {
   const otherIngredients =
     foodCtx && foodCtx.otherMeals && foodCtx.otherMeals.ingredients;
 
-  let a_shoppingList =
+  const a_shoppingList =
     realIngredients &&
     otherIngredients &&
     [...realIngredients, ...otherIngredients].sort((a, b) => {
@@ -51,47 +44,13 @@ const Home = (props) => {
       return textA < textB ? -1 : textA > textB ? 1 : 0;
     });
 
-  useEffect(() => {
-    const newList = a_shoppingList.map((item, index, a_shoppingList) => {
-      if (
-        a_shoppingList &&
-        typeof a_shoppingList[index] !== "undefined" &&
-        typeof a_shoppingList[index + 1] !== "undefined" &&
-        item &&
-        typeof item.ingredient !== "undefined"
-      ) {
-        if (
-          a_shoppingList[index + 1] &&
-          a_shoppingList[index + 1].ingredient &&
-          item.ingredient.trim() === a_shoppingList[index + 1].ingredient.trim()
-        ) {
-          const item1 = item;
-          const item2 = a_shoppingList[index + 1];
-
-          const totalNumber = item1.number + item2.number;
-          const price = item.price;
-
-          const newItem = {
-            ...item,
-            number: totalNumber,
-            total: price * totalNumber,
-          };
-          a_shoppingList.splice(index, 2, newItem);
-          return newItem;
-        } else {
-          return item;
-        }
-      }
-    });
-  }, [a_shoppingList]);
 
   return (
-    <Fragment>
-      <button onClick={goToSignUP}>transfer now</button>
+    <AUTH_GUARD needsAdmin={false} needsLoggedIn={true} needsUser={true}>
       <ShoppingList
         shoppingList={a_shoppingList}
         realMeals={realMeals}
-        realIngredients={realIngredients}
+        realIngredients={realIngredients} 
         otherMeals={otherMeals}
         otherIngredients={otherIngredients}
         menuId={foodCtx.menuId}
@@ -106,7 +65,7 @@ const Home = (props) => {
         setReload={foodCtx.setReload}
         hasIngredients={foodCtx.hasScheduleIngredients}
       />
-    </Fragment>
+    </AUTH_GUARD>
   );
 };
 

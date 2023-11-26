@@ -1,0 +1,15 @@
+bootstrap
+redux
+redux-toolkit
+react-redux
+bootstrap-react
+@fortawesome/react-fontawesome
+@fortawesome/free-solid-svg-icons
+@fortawesome/free-regular-svg-icons
+@fortawesome/free-brands-svg-icons
+
+mongo *
+pg *
+
+
+* optional

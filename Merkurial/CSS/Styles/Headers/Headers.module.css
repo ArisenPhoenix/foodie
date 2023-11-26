@@ -1,0 +1,30 @@
+.header {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.subHeader {
+  font-size: larger;
+  text-align: left;
+}
+
+.sectionHeader {
+  font-size: large;
+  text-align: center;
+}
+
+.subSection {
+  font-size: medium;
+  text-align: left;
+}
+
+.detail {
+  font-size: small;
+  text-align: left;
+}
+
+.popUpBox {
+  font-size: smaller;
+  text-align: left;
+  text-indent: 0.2rem;
+}

@@ -1,0 +1,315 @@
+/* MARGIN X AXIS */
+
+/* margin right */
+
+.xsmR {
+  margin-right: 1%;
+}
+
+.smR {
+  margin-right: 2%;
+}
+
+.mdR {
+  margin-right: 4%;
+}
+
+.lgR {
+  margin-right: 5%;
+}
+
+.xlgR {
+  margin-right: 8%;
+}
+
+.xxlgR {
+  margin-right: 10%;
+}
+
+/* margin left */
+
+.xsmL {
+  margin-left: 1%;
+}
+
+.smL {
+  margin-left: 2%;
+}
+
+.mdL {
+  margin-left: 4%;
+}
+
+.lgL {
+  margin-left: 5%;
+}
+
+.xlgL {
+  margin-left: 8%;
+}
+
+.xxlgL {
+  margin-left: 10%;
+}
+
+/* margin top */
+
+.xsmMT {
+  margin-top: 1%;
+}
+
+.smMT {
+  margin-top: 2%;
+}
+
+.mdMT {
+  margin-top: 4%;
+}
+
+.lgMT {
+  margin-top: 5%;
+}
+
+.xlgMT {
+  margin-top: 8%;
+}
+
+.xxlgMT {
+  margin-top: 10%;
+}
+
+/* Padding Top */
+
+.xsmMB {
+  margin-bottom: 1%;
+}
+
+.smMB {
+  margin-bottom: 2%;
+}
+
+.mdMB {
+  margin-bottom: 4%;
+}
+
+.lgMB {
+  margin-bottom: 5%;
+}
+
+.xlgMB {
+  margin-bottom: 8%;
+}
+
+.xxlgMB {
+  margin-bottom: 10%;
+}
+
+/* Padding Top */
+
+.xsmMT {
+  margin-top: 1%;
+}
+
+.smMT {
+  margin-top: 2%;
+}
+
+.mdMT {
+  margin-top: 4%;
+}
+
+.lgMT {
+  margin-top: 5%;
+}
+
+.xlgMT {
+  margin-top: 8%;
+}
+
+.xxlgMT {
+  margin-top: 10%;
+}
+
+/* Padding Top */
+.xsmPT {
+  padding-top: 1%;
+}
+
+.smPT {
+  padding-top: 2%;
+}
+
+.mdPT {
+  padding-top: 4%;
+}
+
+.lgPT {
+  padding-top: 5%;
+}
+
+.xlgPT {
+  padding-top: 8%;
+}
+
+.xxlgPT {
+  padding-top: 10%;
+}
+
+/* Padding Bottom */
+
+.xsmPB {
+  padding-bottom: 1%;
+}
+
+.smPB {
+  padding-bottom: 2%;
+}
+
+.mdPB {
+  padding-bottom: 4%;
+}
+
+.lgPB {
+  padding-bottom: 5%;
+}
+
+.xlgPB {
+  padding-bottom: 8%;
+}
+
+.xxlgPB {
+  padding-bottom: 10%;
+}
+
+/* x margin left and right */
+
+.xsmMX {
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.smMX {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.mdMX {
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.lgMX {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.xlgMX {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+.xxlgMX {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* MARGIN Y AXIS */
+
+.xsmMX {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.smMX {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.mdMX {
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.lgMX {
+  margin-top: 6%;
+  margin-bottom: 6%;
+}
+
+.xlgMX {
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+
+.xxlgMX {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+/* PADDING X AXIS */
+
+.xsmPX {
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.smPX {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.mdPX {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.lgPX {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.xlgPX {
+  padding-left: 8%;
+  padding-right: 8%;
+}
+.xxlgPX {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.xsmPY {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.smPY {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.mdPY {
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+.lgPY {
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
+
+.xlgPY {
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+.xxlgPY {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.xxxlgPY {
+  padding-top: 18%;
+  padding-bottom: 18%;
+}
+
+.xxxxlgPY {
+  padding-top: 25%;
+  padding-bottom: 25%;
+}

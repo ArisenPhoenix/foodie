@@ -1,0 +1,59 @@
+.addIngredientDiv {
+  width: 100% !important;
+  justify-content: baseline !important;
+  text-align: center;
+  margin: auto;
+  padding: 5% !important;
+}
+
+.ingredientInput, .selectionInput,
+.priceInput,
+.label {
+  width: 100% !important;
+  height: 40px;
+  text-align: center;
+}
+
+
+
+.selectionColInput {
+  margin-top: 50px;
+}
+
+
+.addButton {
+  width: 50% !important;
+  border-radius: 9px;
+  margin-top: 20% !important;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  height: 100% !important;
+  margin: auto !important;
+  font-size: large;
+}
+
+.priceText {
+  text-align: center;
+}
+
+.numberInput {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;
+  gap: unset;
+
+}
+
+
+.ingredientText {
+  text-align: center;
+}
+
+/* .selector { */
+  /* padding: 0; */
+  /* margin: 0; */
+  /* height: 100%; */
+  /* display: inherit; */
+  /* position: relative; */
+/* } */

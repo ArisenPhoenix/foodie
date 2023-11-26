@@ -1,0 +1,127 @@
+/* colors */
+@import url("../../root.module.css");
+
+.roundblack {
+  box-shadow: 0 0 24px 12px var(--black);
+}
+.roundwhite {
+  box-shadow: 0 0 24px 12px var(--white);
+}
+.roundgold {
+  box-shadow: inset 0 0 12px 8px var(--gold);
+}
+.roundsilver {
+  box-shadow: inset 0 0 12px 8px var(--silver);
+}
+
+.roundsilver {
+  box-shadow: 0 0 24px 12px var(--silver);
+}
+.roundorange {
+  box-shadow: 0 0 24px 12px var(--orange);
+}
+.roundhotpink {
+  box-shadow: 0 0 24px 12px var(--hotPink);
+}
+.roundpink {
+  box-shadow: 0 0 24px 12px var(--pink);
+}
+.roundblue {
+  box-shadow: 0 0 24px 12px var(--blue);
+}
+.roundgreen {
+  box-shadow: 0 0 24px 12px var(--green);
+}
+.roundpurple {
+  box-shadow: 0 0 24px 12px var(--purple);
+}
+.roundlightpurple {
+  box-shadow: 0 0 24px 12px var(--lightPurple);
+}
+.roundmist {
+  box-shadow: 0 0 24px 12px var(--mist);
+}
+
+/* widths */
+.thin {
+  border-width: 1px;
+}
+
+.medium {
+  border-width: 3px;
+}
+
+.wide {
+  border-width: 5px;
+}
+
+/* styles */
+
+.dashed {
+  border-style: dashed;
+}
+
+.solid {
+  border-style: solid;
+}
+
+.grooved {
+  border-style: groove;
+}
+
+/* radii */
+.inset {
+  box-shadow: inset;
+}
+
+.shadowRound {
+  box-shadow: inset 0 0 12px 5px;
+}
+
+/* .shadowRound {
+  var(--roundBlack)
+} */
+
+.shadowRound .greenShadow {
+  box-shadow: rgba(2, 89, 1, 0.508);
+}
+
+.shadowRound .lightGreenShadow {
+  box-shadow: rgba(10, 195, 7, 0.615);
+}
+
+.pinkShadow {
+  box-shadow: pink;
+}
+
+.hotPinkShadow {
+  box-shadow: rgb(220, 0, 172);
+}
+
+.silverShadow {
+  box-shadow: silver;
+}
+
+.shadowRound,
+.goldShadow {
+  box-shadow: rgb(233, 198, 0);
+}
+
+.smallRound {
+  border-radius: 10px;
+}
+.mediumRound {
+  border-radius: 15px;
+}
+.largeRound {
+  border-radius: 20px;
+}
+
+.fullRound {
+  border-radius: 100px;
+}
+
+.noBorder {
+  border-style: none;
+  border-color: transparent;
+}

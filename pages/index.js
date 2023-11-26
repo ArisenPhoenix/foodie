@@ -1,15 +1,12 @@
 import Head from "next/head";
-import css from "../styles/Home.module.css";
 import { useContext, useEffect } from "react";
-import BusinessContext from "../store/business-context";
+// import BusinessContext from "../store/business-context";
 import FoodContext from "../store/food-context";
 import ShoppingList from "../oComponents/ShoppingList/ShoppingList";
-import AuthGuard from "../Helpers/AuthGuard/AuthGuard";
-
+import AUTH_GUARD from "../Merkurial/Auth/AUTH.js"
 export default function Home() {
-  const busiCtx = useContext(BusinessContext);
+  // const busiCtx = useContext(BusinessContext);
   const foodCtx = useContext(FoodContext);
-
   const showMeals = false;
   const showMealType = false;
 
@@ -37,74 +34,76 @@ export default function Home() {
   const otherIngredients =
     foodCtx && foodCtx.otherMeals && foodCtx.otherMeals.ingredients;
 
-  let a_shoppingList =
-    realIngredients &&
-    otherIngredients &&
-    [...realIngredients, ...otherIngredients].sort((a, b) => {
-      var textA = a.ingredient;
-      var textB = b.ingredient;
-      return textA < textB ? -1 : textA > textB ? 1 : 0;
-    });
+  // const a_shoppingList =
+  //   realIngredients &&
+  //   otherIngredients &&
+  //   [...realIngredients, ...otherIngredients].sort((a, b) => {
+  //     var textA = a.ingredient;
+  //     var textB = b.ingredient;
+  //     return textA < textB ? -1 : textA > textB ? 1 : 0;
+  //   });
 
-  useEffect(() => {
-    const newList = a_shoppingList.map((item, index, a_shoppingList) => {
-      if (
-        a_shoppingList &&
-        typeof a_shoppingList[index] !== "undefined" &&
-        typeof a_shoppingList[index + 1] !== "undefined" &&
-        item &&
-        typeof item.ingredient !== "undefined"
-      ) {
-        if (
-          a_shoppingList[index + 1] &&
-          a_shoppingList[index + 1].ingredient &&
-          item.ingredient.trim() === a_shoppingList[index + 1].ingredient.trim()
-        ) {
-          const item1 = item;
-          const item2 = a_shoppingList[index + 1];
+  // useEffect(() => {
 
-          const totalNumber = item1.number + item2.number;
-          const price = item.price;
+    // const newList = a_shoppingList.map((item, index, a_shoppingList) => {
+    //   if (
+    //     a_shoppingList &&
+    //     typeof a_shoppingList[index] !== "undefined" &&
+    //     typeof a_shoppingList[index + 1] !== "undefined" &&
+    //     item &&
+    //     typeof item.ingredient !== "undefined"
+    //   ) {
+    //     if (
+    //       a_shoppingList[index + 1] &&
+    //       a_shoppingList[index + 1].ingredient &&
+    //       item.ingredient.trim() === a_shoppingList[index + 1].ingredient.trim()
+    //     ) {
+    //       const item1 = item;
+    //       const item2 = a_shoppingList[index + 1];
 
-          const newItem = {
-            ...item,
-            number: totalNumber,
-            total: price * totalNumber,
-          };
-          a_shoppingList.splice(index, 2, newItem);
-          return newItem;
-        } else {
-          return item;
-        }
-      }
-    });
-  }, [a_shoppingList]);
+    //       const totalNumber = item1.number + item2.number;
+    //       const price = item.price;
+
+    //       const newItem = {
+    //         ...item,
+    //         number: totalNumber,
+    //         total: price * totalNumber,
+    //       };
+    //       a_shoppingList.splice(index, 2, newItem);
+    //       return newItem;
+    //     } else {
+    //       return item;
+    //     }
+    //   }
+    // });
+  // }, [a_shoppingList]);
+
   return (
-    <AuthGuard>
-      <div className={css.container}>
+    <AUTH_GUARD needsAdmin={false} needsLoggedIn={true} needsUser={true}>
+      <div>
         <Head>
-          <title>{busiCtx.name}</title>
+          {/* <title>{busiCtx.name}</title> */}
           <meta name="description" content="Shopping List and Menu" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <ShoppingList
-          shoppingList={a_shoppingList}
-          realMeals={realMeals}
-          realIngredients={realIngredients}
-          otherMeals={otherMeals}
-          otherIngredients={otherIngredients}
-          menuId={foodCtx.menuId}
-          scheduleId={foodCtx.scheduleId}
-          cur={foodCtx.currency}
-          showMeals={showMeals}
-          showMealType={showMealType}
-          mealModuleClasses={mealModuleClasses}
-          getNew={foodCtx.getNew}
-          reload={foodCtx.reload}
-          setReload={foodCtx.setReload}
-          hasIngredients={foodCtx.hasScheduleIngredients}
+          shoppingList={foodCtx.allIngredients}
+          // realMeals={realMeals}
+          // realIngredients={realIngredients}
+          // otherMeals={otherMeals}
+          // otherIngredients={otherIngredients}
+          // menuId={foodCtx.menuId}
+          // scheduleId={foodCtx.scheduleId}
+          // cur={foodCtx.currency}
+          // showMeals={showMeals}
+          // showMealType={showMealType}
+          // mealModuleClasses={mealModuleClasses}
+          // getNew={foodCtx.getNew}
+          // reload={foodCtx.reload}
+          // setReload={foodCtx.setReload}
+          // hasIngredients={foodCtx.hasScheduleIngredients}
         />
       </div>
-    </AuthGuard>
+    </AUTH_GUARD>
   );
 }

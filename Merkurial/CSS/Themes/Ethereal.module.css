@@ -1,0 +1,37 @@
+.bg {
+  background-color: rgba(107, 55, 105, 0.399) !important;
+}
+
+.text {
+  color: rgba(218, 191, 191, 0.929) !important;
+}
+
+.text p,
+.text h1,
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6,
+.text a {
+  color: rgba(218, 191, 191, 0.929) !important;
+}
+
+.bg div {
+  background-color: purple;
+}
+
+.bg input {
+  background-color: white;
+}
+
+/* FireFox */
+.bg input ::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+/* InternetExplorer/Edge */
+.bg input::-ms-input-placeholder {
+  color: black;
+}

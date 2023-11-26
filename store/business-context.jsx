@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import AuthContext from "./auth-context";
+import AuthContext from "./site_context";
 
 const BusinessContext = createContext({
   name: "Foodie",

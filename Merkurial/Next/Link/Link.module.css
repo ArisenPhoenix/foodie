@@ -1,0 +1,9 @@
+.color {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.color:hover {
+  color: inherit;
+}

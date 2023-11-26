@@ -1,11 +1,22 @@
-import AddDishForm from "../../oComponents/AddDishForm/AddDishFormPage";
-import { useContext } from "react";
+import CreateDishForm from "../../oComponents/Forms/FormsAddMenuItems/AddNewDish";
+import { useContext, useEffect } from "react";
+import { useRouter } from "next/router";
 import FoodContext from "../../store/food-context";
-import AuthGuard from "../../Helpers/AuthGuard/AuthGuard";
+import AUTH_GUARD from "../../Merkurial/Auth/AUTH";
+import SiteContext from "../../store/site_context";
 
 const AddNewDishPage = (props) => {
-  console.log("add");
+  const router = useRouter()
   const foodCtx = useContext(FoodContext);
+  const siteCtx = useContext(SiteContext)
+  const currentPage = router.asPath
+  
+
+  useEffect(() => {
+    siteCtx.lastPage.save({lastPage: currentPage})
+  }, [])
+
+  
   const menu = [
     foodCtx.breakfast,
     foodCtx.lunch,
@@ -22,9 +33,9 @@ const AddNewDishPage = (props) => {
   dishes.unshift("Choose");
 
   return (
-    <AuthGuard>
-      <AddDishForm dishes={dishes} />
-    </AuthGuard>
+    <AUTH_GUARD>
+      <CreateDishForm dishes={["Choose", "Breakfast", "Lunch", "Dinner"]} />
+    </AUTH_GUARD>
   );
 };
 

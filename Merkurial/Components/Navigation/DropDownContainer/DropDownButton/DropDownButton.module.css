@@ -1,0 +1,19 @@
+.main {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.svg {
+  height: 3rem;
+  width: 4rem;
+  color: red;
+}
+
+.divClass {
+  border-radius: 8px;
+  position: relative;
+  height: 3rem;
+  width: 4rem;
+  background-color: red;
+  color: red;
+}

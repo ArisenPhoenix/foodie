@@ -1,99 +1,85 @@
-import { useState, useContext, Fragment } from "react";
-import AuthContext from "../../store/auth-context";
-import { Form, Button } from "react-bootstrap";
+import { useState, useContext } from "react";
 import { useRouter } from "next/router";
+import AuthContext from "../../store/site_context";
+import { Form, Button } from "react-bootstrap";
 import css from "./Signup.module.css";
 import Card from "../../oComponents/UI/Card/Card";
-import { SIGN_LOG_IN_FETCH } from "../../store/FOODCONTEXT/FETCH_API";
+import { userSchema } from "../../merkurialSchemas"
+import LoadingScreen from "../../Merkurial/Components/UI/LoadingScreen/LoadingScreen";
+import useSqlTable from "../../Merkurial/hooks/useSqlTable";
+import AUTH_GUARD from "../../Merkurial/Auth/AUTH";
+
 
 const Signup = () => {
   const authCtx = useContext(AuthContext);
-  const router = useRouter();
+  const messenger = (text) => {
+    if (text !== "Table users Already Exists" && text != "Table users Does Not Exist"){
+      setError(text)
+    }
+  }
+  const router = useRouter()
+  const {isQuerying, ADD_ROW} = useSqlTable("users", userSchema, "/api/postgres", "GET", true, messenger, {returning: "*"})
+
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [verifyPassword, setVerifyPassword] = useState("")
+  const [sex, setSex] = useState("Select One")
   const [displayName, setDisplayName] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const setStates = [
-    setFName,
-    setLName,
-    setEmail,
-    setPassword,
-    setDisplayName,
-    setError,
-  ];
-
-  const loginHandler = async (userData) => {
-    const toSend = JSON.stringify(userData);
-    console.log("in login handler ...");
-    let data;
-    try {
-      data = await fetch("/api/login", {
-        method: "POST",
-        body: toSend,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-    } catch (error) {
-      console.log("There was an error posting data to the server...");
-      setError(error);
-      return null;
-    }
-    try {
-      const loginData = await data.json();
-      if (loginData.error) {
-        console.log("this data is the error");
-        console.log(loginData.error.message);
-        return loginData.error.message;
-      }
-
-      return loginData;
-    } catch (error) {
-      console.log("there was an error signing you in");
-      setError(error);
-      return null;
-    }
-  };
 
   const formSubmitHandler = async (event) => {
     event.preventDefault();
-    const credentials = {
-      fName: fName,
-      lName: lName,
-      displayName: displayName,
-      email: email,
-      password: password,
-    };
-
-    setIsLoading(true);
-    const data = await SIGN_LOG_IN_FETCH(credentials, "/api/signup");
-    if (data.token) {
-      console.log("THE TOKEN AND ALL INFO IS IN:");
-    } else {
-      // console.log("FAULTY DATA, NOTHING CAME IN");
-      console.log(data);
+    const resetError = () => {
+      setTimeout(() => {
+        setError(null)
+      }, 3000)
     }
-
-    if (data === null || data === undefined || data === "null") {
-      console.log("some error occured server side.");
+    let chosenSex = sex 
+    if (sex[0] === "S"){
+      chosenSex = "X"
     } else {
-      const token = data.token;
-      const userName = data.displayName;
-      const expirationTime = new Date(
-        new Date().getTime() + +data.expiresIn * 1000
-      );
-      authCtx.login(token, userName, expirationTime);
+      chosenSex = chosenSex[0]
     }
-    setIsLoading(false);
+    if (password.trim() != verifyPassword.trim()){
+      setError("Emails Don't Match")
+      resetError()
+      return
+    } else if (password == ""){
+      setError("Please Make Sure You Have Entered A Password")
+      resetError()
+      return
+    } else if (password.length < 7){
+      setError("Password Must Be Atleast 7 Characters Long")
+      resetError()
+      return
+    } else {
+
+      const userObj = {
+        username: displayName.trim(),
+        first_name: fName.trim(),
+        last_name: lName.trim(),
+        email: email.trim(),
+        password: password.trim(),
+        currency: "฿",
+        sex: sex[0],
+        days_for_main_meals: 7,
+        days_for_other_meals: 3,
+      }
+  
+      const signupRes = await ADD_ROW(userObj, {returning: "*"})
+      if (signupRes){
+        router.push("/login")
+      }
+    }
   };
 
   const handleChange = (event) => {
     const name = event.target.id;
     const value = event.target.value;
+    console.log("Value: ", value[0])
     switch (name) {
       case "fName":
         setFName(value);
@@ -110,13 +96,18 @@ const Signup = () => {
       case "password":
         setPassword(value);
         break;
+      case "verifyPassword":
+        setVerifyPassword(value)
+        break
+      case "sex":
+        setSex(value)
       default:
         break;
     }
-  };
+  }; 
   return (
-    <Fragment>
-      {isLoading === false ? (
+    <AUTH_GUARD needsLoggedIn={false} needsAdmin={false} needsUser={false}>
+      {isQuerying === false ? (
         <div className={css.signup}>
           <Card className={css.card}>
             <h1 className={css.heading}>Signup</h1>
@@ -158,7 +149,7 @@ const Signup = () => {
                   autoComplete="email"
                 />
                 <Form.Text className="text-muted">
-                  We will never share your email with anyone else.
+                  Your email will not be shared with anyone else.
                 </Form.Text>
               </Form.Group>
 
@@ -175,6 +166,40 @@ const Signup = () => {
                   And of course not your password
                 </Form.Text>
               </Form.Group>
+
+              <Form.Group className="mb-3" controlId="verifyPassword">
+                <Form.Label>Verify Password</Form.Label>
+                <Form.Control
+                  value={verifyPassword}
+                  onChange={handleChange}
+                  type="password"
+                  placeholder="Password"
+                  autoComplete="password"
+                />
+                <Form.Text className="text-muted">
+                  Just To Be Sure
+                </Form.Text>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="sex">
+                <Form.Label>Sex</Form.Label>
+                
+                  <Form.Select
+                    value={sex}
+                    onChange={handleChange}
+                    autoComplete="sex"
+                  >
+                    <option>{"Select One"}</option>
+                    {["Male", "Female", "X"].map((val) => {
+                    return <option key={val} value={val}>{val}</option>
+                  })}
+                  </Form.Select>
+
+                <Form.Text >
+                  For Statistical Purposes Only
+                </Form.Text>
+              </Form.Group>
+
               <Button
                 className={css.button}
                 onClick={formSubmitHandler}
@@ -188,10 +213,9 @@ const Signup = () => {
           </Card>
         </div>
       ) : (
-        // This is just a loading sign.
-        <h1>Checking...</h1>
+        <LoadingScreen />
       )}
-    </Fragment>
+    </AUTH_GUARD>
   );
 };
 

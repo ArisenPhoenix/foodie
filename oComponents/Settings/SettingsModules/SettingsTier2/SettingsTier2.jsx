@@ -16,7 +16,7 @@ const SettingsTier2 = (props) => {
           </Fragment>
         );
       })}
-    </Fragment>
+    </Fragment> 
   );
 };
 

@@ -1,0 +1,114 @@
+/* NAV ITEM */
+
+.navItem {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileNavItem {
+    display: relative;
+    text-align: center;
+}
+
+.mobileNavItem {
+    text-align: center;
+    height: fit-content;
+}
+
+.navTextClass {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.mobileNavTextClass {
+    align-items: center;
+    padding: 0;
+    margin:0;
+    width: 100%;
+    cursor: pointer;
+    vertical-align: middle;
+    font-size: 1.5rem;
+}
+/* 
+.navTextClass:hover {
+    margin:0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    transition: all .2s ease-in-out;
+    transform: scale(1);
+    height: max-content;
+} */
+
+.navItem:hover, .navItem:focus, .mobileNavItem:hover, .mobileNavItem:focus {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
+    width: 100%;
+    
+}
+.mobileNavItem:hover, .mobileNavItem:focus {
+    border-bottom-color: red;
+    box-shadow: 0 0 1px 0;
+}
+
+
+.left, .right, .center {
+    list-style: none;
+    margin: 1% 1% 0 1%;
+    padding:0;
+    height: fit-content;
+    text-align: center;
+}
+
+.left {
+    justify-self: right;
+    justify-self: left;
+}
+
+.right {
+    justify-self: right;
+    justify-self: right;
+    align-self: right;
+    align-self: right;
+}
+
+.center {
+    justify-self: center;
+    padding: 0;
+    margin: 0;
+}
+
+.border, .mobileBorder {
+    padding: 0;
+    margin: 0;
+}
+
+.border {
+    border-width: .15rem;
+    border-top-style: inset;
+    border-left-style: inset;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-color: black;
+}
+
+.mobileBorder {
+    border-bottom-style: inset;
+    box-shadow: 0 1px 1px 1px rgb(44, 44, 44);
+    border-width: 1px;
+}

@@ -1,0 +1,101 @@
+.nav, .navMobile {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+}
+
+.nav {
+    justify-content: safe;
+    width: 100%;
+}
+
+.navMobile {
+    flex-direction: row;
+    padding: 0;
+}
+ 
+.logoSection, .dropDownButtonSection {
+    border-radius: inherit;
+}
+
+
+.leftSection, .rightSection, .centerSection {
+    display: flex;
+    width: 100%;
+    margin:0 !important;
+    padding:0 !important;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leftSection {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rightSection {
+    justify-content: flex-end;
+}
+
+.centerSection {
+    justify-content: center;
+}
+
+.border, .mobileBorder {
+    padding: 0;
+    margin: 0;
+}
+
+.border {
+    border-width: .15rem;
+    border-top-style: inset;
+    border-left-style: inset;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-color: black;
+}
+
+.mobileBorder {
+    border-bottom-style: inset;
+    border-color: red;
+    border-width: 2rem;
+    box-shadow: inset 0 1px;
+    padding: 0;
+    margin: 0;
+}
+
+.dropButton {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    display: row;
+    align-content: right;
+    align-items: right;
+    justify-content: right;
+    justify-items:right;
+    height: 4rem;
+    width: 4rem;
+}
+
+.dropDownDiv {
+    position: relative;
+    height: fit-content;
+    z-index: 100;
+}
+
+
+
+
+
+
+
+
+
+
+
+ 

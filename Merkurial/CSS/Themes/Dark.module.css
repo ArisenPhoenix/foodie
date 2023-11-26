@@ -1,0 +1,271 @@
+@import url("./DarkSetup.module.css");
+@import url("root.module.css");
+
+.bg {
+  background-color: var(--black);
+}
+
+.text {
+  color: var(--white);
+}
+
+.text p,
+.text h1,
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6,
+.text a {
+  color: var(--white);
+}
+
+.text p,
+.bg p {
+  font-size: 1rem;
+}
+
+.text h1,
+.bg h1 {
+  font-size: 1rem;
+}
+
+.text h2,
+.bg h2 {
+  font-size: 0.8rem;
+}
+
+.text h3,
+.bg h3 {
+  font-size: 0.6rem;
+}
+
+.text h4,
+.bg h4 {
+  font-size: 0.5rem;
+}
+
+.text h5,
+.bg h5 {
+  font-size: 0.5rem;
+}
+
+.text h6,
+.bg h6 {
+  font-size: 0.5rem;
+}
+
+.bg div {
+  background-color: var(--black);
+}
+
+.text div {
+  color: var(--white);
+}
+
+.bg input {
+  background-color: var(--black);
+  box-shadow: inset 0 0 8px 0.3rem var(--gold);
+  color: var(--white);
+  height: 3rem;
+}
+
+.bg input:focus,
+.bg input:hover {
+  background-color: var(--black);
+  box-shadow: 0 0 10px 6px var(--gold);
+  color: var(--white);
+}
+
+.bg input:focus::placeholder,
+.bg input:hover::placeholder {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.bg input:active {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.bg input::placeholder {
+  color: var(--white);
+}
+
+/* Firefox +*/
+.bg input::placeholder {
+  color: var(--white);
+  opacity: 1;
+}
+
+/* Microsoft Edge */
+.bg input::-ms-input-placeholder {
+  color: var(--white);
+}
+
+.bg input:-webkit-autofill,
+.text input:-webkit-autofill {
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--wine);
+  -webkit-text-fill-color: var(--green);
+  box-shadow: 0 0 0px 1000px var(--black) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--black) inset;
+  transition: background-color 500ms ease-in-out 1s;
+}
+
+.bg label {
+  font-size: x-large;
+}
+
+.bg table {
+  background: var(--black);
+  color: var(--white);
+}
+
+.bg button {
+  box-shadow: inset 0 0 10px 6px var(--gold);
+  height: 2rem;
+}
+
+.bg button:hover {
+  box-shadow: 0 0 10px 6px var(--gold);
+}
+
+@media screen and (min-width: 2000px) {
+  .text,
+  .bg {
+    font-size: 3rem;
+  }
+
+  .text p,
+  .bg p {
+    font-size: 2rem;
+  }
+
+  .text h1,
+  .bg h1 {
+    font-size: 4rem;
+  }
+
+  .text h2,
+  .bg h2 {
+    font-size: 3rem;
+  }
+
+  .text h3,
+  .bg h3 {
+    font-size: 3rem;
+  }
+
+  .text h4,
+  .bg h4 {
+    font-size: 2.5rem;
+  }
+
+  .text h5,
+  .bg h5 {
+    font-size: 2.5rem;
+  }
+
+  .text h6,
+  .bg h6 {
+    font-size: 2.5rem;
+  }
+
+  .nav .bg {
+    height: 5%;
+    box-shadow: inset 0 0 10px 6px var(--gold);
+  }
+
+  .bg nav {
+    height: 5% !important;
+    box-shadow: inset 0 0 10px 6px var(--gold);
+  }
+
+  .text input,
+  .bg input {
+    height: 5rem;
+  }
+
+  .text button,
+  .bg button {
+    height: 5rem !important;
+  }
+
+  .bg button {
+    box-shadow: inset 0 0 10px 6px var(--gold);
+  }
+}
+
+/* More Transparent Versions */
+/*  */
+
+/*  */
+
+/*  */
+
+/*  */
+
+/*  */
+/* MORE TRANSPARENT VERSIONS */
+
+.bgGlass {
+  background-color: var(--blackGlass) !important;
+}
+
+.textGlass {
+  color: var(--whiteGlass) !important;
+}
+
+.textGlass p,
+.textGlass h1,
+.textGlass h2,
+.textGlass h3,
+.textGlass h4,
+.textGlass h5,
+.textGlass h6,
+.textGlass a {
+  color: var(--white) !important;
+}
+
+.bgGlass div {
+  background-color: var(--blackGlass);
+}
+
+.bgGlass input {
+  background-color: var(--blackGlass);
+}
+
+.bgGlass input:focus,
+.bgGlass input:hover {
+  background-color: var(--whiteGlass);
+  color: var(--blackGlass);
+}
+
+/* Firefox +*/
+.bgGlass input ::placeholder {
+  color: var(--whiteGlass);
+  opacity: 1;
+}
+
+/* Microsoft Edge */
+.bgGlass input::-ms-input-placeholder {
+  color: var(--whiteGlass);
+}
+
+.bgGlass table {
+  background: var(--blackGlass);
+  color: var(--whiteGlass);
+}
+
+.bgGlass input:-webkit-autofill,
+.textGlass input:-webkit-autofill {
+  background-color: var(--blackGlass);
+  color: var(--whiteGlass);
+  border: 1px solid var(--green);
+  -webkit-text-fill-color: var(--green);
+  box-shadow: 0 0 0px 1000px var(--blackGlass) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--blackGlass) inset;
+  transition: background-color 500ms ease-in-out 1s;
+}

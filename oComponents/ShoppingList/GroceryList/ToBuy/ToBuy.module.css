@@ -34,3 +34,12 @@
 .price {
   width: 8% !important;
 }
+
+
+.tr {
+  background-color: none;
+}
+
+.checked {
+  background-color: rgba(247, 74, 30, 0.486);
+}

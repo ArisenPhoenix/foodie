@@ -1,21 +1,26 @@
-import { Fragment } from "react";
-import DailyMeals from "../DailyMeals/DailyMeals";
+import css from "./WeeklyPlan.module.css"
+import HEADING from "../../../Merkurial/Components/UI/SectionHeaders/Headers/HEADING";
+import DailyMeals from "../../MenuItemDisplays/MealDisplay/DailyMeals/DailyMeals";
 
 const WeeklyPlan = (props) => {
+  const { plan } = props
+  const planIsGood = plan && Array.isArray(plan)
   return (
-    <Fragment>
-      {props.plan.map((mealsOfTheDay, index) => {
+    <>
+      {planIsGood && plan.map((mealsOfTheDay, index) => {
         return (
-          <DailyMeals
-            key={Math.random() * (index + 1) + Math.random()}
-            dayCount={index + 1}
-            meals={mealsOfTheDay}
-            mealModuleClasses={props.mealModuleClasses}
-          />
+          <div key={`Daily Meals | ${index}`} >
+            <HEADING text={`Day ${index+1}`} className={css.day} />
+            <DailyMeals
+              dayCount={index + 1}
+              meals={mealsOfTheDay}
+              mealModuleClasses={props.mealModuleClasses}
+            />
+          </div>
         );
-      })}
-    </Fragment>
+      })} 
+    </> 
   );
-};
+}; 
 
-export default WeeklyPlan;
+export default WeeklyPlan; 

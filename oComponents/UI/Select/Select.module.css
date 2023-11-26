@@ -1,5 +1,7 @@
 .select {
   padding-bottom: 0 !important;
+  margin-bottom: 5px !important;
+  height: 100% !important;
 }
 
 .finalOption {
@@ -8,4 +10,11 @@
 
 .label {
   text-align: left !important;
+}
+
+.div {
+  display: flex;
+  justify-content:space-around;
+  height: 50%;
+  padding-bottom: .6em;
 }

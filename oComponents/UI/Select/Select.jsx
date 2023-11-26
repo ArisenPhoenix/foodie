@@ -4,13 +4,13 @@ import Option from "./Option/Option";
 import Label from "../Label/Label";
 
 const Select = (props) => {
-  const classes = ` ${props.className}`;
+  const classes = ` ${props.className} ${css.div}`;
   const options = props.options;
 
   if (props.choose === true) {
     options.unshift("Choose");
   }
-
+ 
   return (
     <div
       className={classes}
@@ -20,12 +20,12 @@ const Select = (props) => {
     >
       <Label
         text={props.label}
-        className={props.labelClass}
+        // className={props.labelClass}
         value={props.value}
       />
       <Form.Select
         aria-label="Selection"
-        className={css.select}
+        // className={css.select}
         onChange={props.onChange}
         id={props.id}
         name={props.name}

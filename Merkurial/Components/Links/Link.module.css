@@ -1,0 +1,35 @@
+.linkDiv {
+  display: block;
+  margin: auto;
+  padding: auto;
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+  color: red;
+}
+
+.linkDiv:hover {
+  background-color: rgba(145, 68, 13, 0.172);
+}
+
+.link {
+  font-weight: bold;
+  text-decoration: none;
+  color: whitesmoke;
+  vertical-align: middle;
+  height: 50%;
+  width: 100%;
+  margin: auto;
+}
+
+.link:hover {
+  color: white;
+}
+
+.link::after {
+  text-decoration: none;
+}
+
+.image {
+  border-radius: 8px;
+}

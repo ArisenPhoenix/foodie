@@ -1,0 +1,218 @@
+.centerAll {
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  vertical-align: baseline;
+}
+
+.noBorder {
+  border-style: none;
+  border-width: 0;
+  border-color: none;
+}
+
+.rounded {
+  border-style: solid;
+  border-radius: 20px;
+  border-color: none;
+  border-width: 2px;
+}
+
+.spaceAbove {
+  margin-top: 40px;
+}
+
+.spaceBelow {
+  margin-bottom: 40px;
+}
+
+.smallSpaceBelow {
+  margin-bottom: 10px;
+}
+
+.largeSpaceBelow {
+  margin-bottom: 5%;
+}
+
+.spaceRight {
+  margin-right: 1rem;
+}
+
+.inheritBackground {
+  background-color: inherit !important;
+}
+
+.fullWidth {
+  width: 100%;
+  max-width: 100%;
+}
+
+.mediumWidth {
+  width: 75%;
+  max-width: 75%;
+}
+
+.halfWidth {
+  width: 50%;
+  max-width: 50%;
+}
+
+.smallBasicPadding {
+  padding: 2%;
+}
+
+.mediumBasicPadding {
+  padding: 4%;
+}
+
+.smallBasicXPadding {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.basicXPadding {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.bigXPadding {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.paddingX {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.smallYMargin {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.mediumYMargin {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.largeYMargin {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.forceInline {
+  display: inline-block !important;
+}
+
+.inheritBorderRadius {
+  border-radius: inherit;
+}
+
+.inheritBackground {
+  background-color: inherit transparent !important;
+}
+
+.smallToBig {
+  width: 50%;
+}
+
+.removeAllStyles {
+  padding: 0;
+  margin: 0;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  display: block;
+  position: relative;
+}
+
+.fillWhiteSpace {
+  height: 90vh;
+}
+
+.absoluteWrap {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 1%;
+  padding-right: 1%;
+  background-color: transparent;
+}
+
+.wrapSpaceBelow {
+  margin-bottom: 8%;
+}
+
+.transparent {
+  background-color: transparent !important;
+}
+
+.superBold {
+  font-weight: bolder;
+}
+
+.fullVW {
+  width: 100vw;
+}
+
+.overFlowX {
+  text-overflow: clip;
+  overflow-x: auto;
+  word-break: keep-all;
+}
+
+.overFlowX::-webkit-scrollbar {
+  border-radius: 20px;
+  height: 10px;
+}
+.overFlowX::-webkit-scrollbar-button {
+  display: none;
+}
+
+.overFlowX::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+}
+
+.overFlowX::-webkit-scrollbar-track {
+  background-color: black;
+  border-radius: 20px;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+@media screen and (max-width: 1000px) {
+  .smallToBig {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .smallToBig {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .overFlowX::-webkit-scrollbar,
+  .overFlowX::-webkit-scrollbar-thumb,
+  .overFlowX::-webkit-scrollbar {
+    display: none;
+    background-color: inherit;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .smallToBig {
+    width: 100%;
+  }
+}

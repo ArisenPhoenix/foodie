@@ -1,0 +1,32 @@
+.dishMainDiv {
+  background-color: red;
+}
+
+.dishSideDiv {
+  background-color: blue;
+}
+
+.card {
+  margin-bottom: 5%;
+}
+
+
+.sideCard, .entreeCard {
+  margin-bottom: 5%;
+}
+
+.sideCard {
+  background-color: color-mix(in lch, black 10%, aliceblue);
+}
+
+.entreeCard {
+  background-color: color-mix(in lch, black 10%, pink);
+}
+ 
+.sideIngredients {
+  background-color: azure;
+}
+
+.entreeIngredients {
+  background-color: antiquewhite;
+}

@@ -1,0 +1,136 @@
+.container {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+
+}
+
+.ingredientSelectContainer {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.finalOption {
+  padding-bottom: 10% !important;
+}
+
+
+.ingredientSelect {
+  display: block !important;
+  height: 50px !important;
+  margin-bottom: 20px;
+}
+
+.selectDiv {
+  display: block !important;
+  height: 50px !important;
+}
+
+
+.numberInput, .button {
+  height: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+.numberInput {
+  display: block;
+  width: 100%;
+
+}
+
+.numberDiv {
+  display: block;
+  width: 90%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+.button {
+  background-color: cyan !important;
+  color: black;
+  width: 100%;
+  height: 50px;
+}
+
+.buttonDiv {
+  width: 10%;
+}
+
+
+.numberAndButtonDiv {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+.buttonDiv, .numberDiv, .selectDiv {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.ingredientSelectContainer {
+  margin-bottom: 50px !important;
+}
+
+
+.numberCol {
+  margin: 0 !important;
+}
+
+
+@media screen and (width < 550px) {
+  .buttonDiv {
+    width: 50px;
+  }
+
+  .buttonDiv {
+    padding-right: -3%;
+    margin-right: -3%;
+  }
+
+}
+
+
+@media screen and (width < 768px) {
+  .numberLabelClass {
+    margin-top: 50px !important;
+  }
+
+  /* .numberCol {
+    margin-bottom: 50px;
+  } */
+  
+}
+
+
+@media screen and (width < 1100px) {
+  .buttonDiv {
+    width: 50px;
+  }
+
+  .buttonDiv {
+    padding-right: -3%;
+    margin-right: -3%;
+  }
+
+}
+
+@media screen and (width < 900px) {
+  .buttonDiv {
+    width: 50px;
+  }
+
+  .buttonDiv {
+    padding-right: -3%;
+    margin-right: -3%;
+  }
+
+}

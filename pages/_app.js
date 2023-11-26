@@ -1,42 +1,47 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
-import AppWrapper from "../oComponents/UI/AppWrapper/AppWrapper";
 import { StrictMode } from "react";
 import { ThemeProvider, SSRProvider } from "react-bootstrap";
-import Container_ from "../oComponents/UI/BootStrap/Container";
-import { AuthContextProvider } from "../store/auth-context";
-
-import { BusinessContextProvider } from "../store/business-context";
-import { WindowContextProvider } from "../store/window-context";
 import { FoodContextProvider } from "../store/food-context";
-import { UserContextProvider } from "../store/user-context";
+import { MERKURIAL_CONTEXT_PROVIDER } from "../Merkurial/store/Context/MERKURIAL_CONTEXT/merkurial_context";
+import { USER_CONTEXT_PROVIDER } from "../Merkurial/store/Context/USER_CONTEXT/user_context"
+import { AUTH_CONTEXT_PROVIDER } from "../Merkurial/store/Context/AUTH_CONTEXT/auth_context";
+import { FOOD_CONTEXT_CONNECTIONS_CONTEXT_PROVIDER } from "../store/food_context_connections"
+import { SiteContextProvider } from "../store/site_context";
+import Navigation from "../Merkurial/Components/Navigation/Navigation";
+import Head from "next/head";
 
-function MyApp({ Component, pageProps }) {
+
+function FoodieApp({ Component, pageProps }) {
   return (
-    <StrictMode>
+    // <StrictMode>
       <SSRProvider>
-        <AuthContextProvider>
-          <BusinessContextProvider>
-            <UserContextProvider>
-              <ThemeProvider
-                breakpoints={["xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
-              >
-                <FoodContextProvider>
-                  <Container_ className={"main"}>
-                    <WindowContextProvider>
-                      <AppWrapper>
+        <Head>
+          <link rel="shortcut icon" href="/favicon.ico" sizes="any" />
+        </Head>
+        
+        <MERKURIAL_CONTEXT_PROVIDER>
+          <USER_CONTEXT_PROVIDER>
+            <AUTH_CONTEXT_PROVIDER>
+              <Navigation>
+            
+                <SiteContextProvider>
+                  <FOOD_CONTEXT_CONNECTIONS_CONTEXT_PROVIDER>
+                    <FoodContextProvider>
+                      <ThemeProvider breakpoints={["xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}>
                         <Component {...pageProps} />
-                      </AppWrapper>
-                    </WindowContextProvider>
-                  </Container_>
-                </FoodContextProvider>
-              </ThemeProvider>
-            </UserContextProvider>
-          </BusinessContextProvider>
-        </AuthContextProvider>
+                      </ThemeProvider>
+                    </FoodContextProvider>
+                  </FOOD_CONTEXT_CONNECTIONS_CONTEXT_PROVIDER>
+                </SiteContextProvider>
+              
+              </Navigation>
+            </AUTH_CONTEXT_PROVIDER>
+            </USER_CONTEXT_PROVIDER>
+        </MERKURIAL_CONTEXT_PROVIDER>
       </SSRProvider>
-    </StrictMode>
+    // </StrictMode>
   );
 }
 
-export default MyApp;
+export default FoodieApp;

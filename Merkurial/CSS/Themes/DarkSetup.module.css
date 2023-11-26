@@ -1,0 +1,9 @@
+@import url("./root.module.css");
+
+.colors:root {
+  --primary: var(--black);
+  --secondary: var(--white);
+  --tertiary: var(--silver);
+  --accent: var(--gold);
+  --pop: var(--mist);
+}

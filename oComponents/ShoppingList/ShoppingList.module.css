@@ -5,3 +5,52 @@
 .shoppingContainer {
   width: 100% !important;
 }
+
+.saveWeeklyPlanButton {
+  width: 100%;
+  background: pink;
+  border-radius: 8px;
+  height: 50px;
+  margin-top: 50px;
+}
+
+.planContainer {
+  margin-top: 50px;
+}
+
+
+.nextPrevDiv {
+  width: 100%;
+}
+
+.next, .back {
+  width: 80px;
+  background-color: pink;
+  font-size: large;
+  height: 50px;
+  text-align: center !important;
+
+}
+
+
+.optionsButtons {
+  height: 50px !important;
+  background-color: rgb(233, 217, 155);
+  color: black;
+  padding: 5px;
+  width: 150px;
+  height: 60px !important;
+}
+
+
+
+@media screen and (width < 945px ) {
+  .optionsButtons {
+    width: 100px;
+  }
+
+  .next, .back {
+    font-size: medium;
+  }
+}
+

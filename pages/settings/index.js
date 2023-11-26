@@ -1,32 +1,18 @@
 import SettingsPage from "../../oComponents/Settings/SettingsPage";
 import { useContext } from "react";
-import UserContext from "../../store/user-context";
+import USER_CONTEXT from "../../Merkurial/store/Context/USER_CONTEXT/user_context";
+import AUTH_GUARD from "../../Merkurial/Auth/AUTH";
 
 const Settings = () => {
-  let update;
-  let updateSetting;
-  const userCtx = useContext(UserContext);
-
-  if (userCtx["User Data"]) {
-    if (userCtx.others) {
-      update = userCtx.others.funcs.update;
-      updateSetting = userCtx.others.funcs.updateUserInfo;
-    } else {
-      update = () => {};
-    }
-  } else {
-    update = () => {};
-  }
+  const userCtx = useContext(USER_CONTEXT)
 
   return (
-    <>
+    <AUTH_GUARD needsAdmin={false} needsLoggedIn={true} needsUser={true}>
       <SettingsPage
-        key={Math.random() / Math.random()}
-        base={userCtx}
-        update={update}
-        updateSetting={updateSetting}
+        base={userCtx.userData}
+        updateSetting={userCtx.settingsFuncs.updateUserSetting}
       />
-    </>
+    </AUTH_GUARD>
   );
 };
 

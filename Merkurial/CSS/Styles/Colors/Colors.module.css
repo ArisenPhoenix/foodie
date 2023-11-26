@@ -1,0 +1,42 @@
+.pink {
+  background-color: pink;
+  color: black;
+}
+
+.red {
+  background-color: red;
+  color: black;
+}
+
+.green {
+  background-color: green;
+  color: red;
+}
+
+.purple {
+  background-color: purple;
+  color: yellow;
+}
+
+.orange {
+  background-color: orange;
+  color: blue;
+}
+
+.orangeRed {
+  background-color: orangered;
+  color: seagreen;
+}
+
+.blackText {
+  color: black !important;
+}
+
+.bronze {
+  background-color: rgb(219, 101, 4);
+  border-radius: 5px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgb(135, 62, 2);
+  box-shadow: inset 0 0 18px 3px rgb(135, 62, 2);
+}

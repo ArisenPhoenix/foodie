@@ -1,11 +1,15 @@
 import css from "./ToBuy.module.css";
-import { longDecimalFix } from "../../../../Helpers/GeneralPurpose/Numbers";
+import { useState } from "react";
+import { longDecimalFix } from "../../../../Merkurial/Helpers/Numbers/decimals";
 
 const ToBuy = (props) => {
-  const currency = props.cur;
-  const deleter = (event) => {
+  const currency = props.currency;
+  const checked = props.checkedIndices.includes(props.index)
+
+  const checkItem = (event) => {
     event.preventDefault();
-    props.onClick(props.index);
+    props.onClick(props.index, checked);
+    
   };
 
   let total = props.total;
@@ -15,17 +19,17 @@ const ToBuy = (props) => {
   }
 
   return (
-    <tr id={props.id} index={props.index} onClick={deleter} className={css.tr}>
-      <td className={`${css.line}`}>{props.line}:</td>
-      <td className={css.td}>
+    <tr id={props.id} index={props.index} onClick={checkItem} className={checked ? css.trChecked : css.tr}>
+      <td className={`${checked ? `${css.line}` : css.line}`}>{checked ? `✅` : props.line}</td>
+      <td className={`${checked ? `${css.td}` : css.td}`}>
         <p className={css.p}>{props.ingredient}</p>
       </td>
-      <td className={css.td}>
+      <td className={`${checked ? `${css.td}` : css.td}`}>
         <p className={css.p}>{props.number}</p>
       </td>
 
       {props.show === "Total" ? (
-        <td className={css.td}>
+        <td className={`${checked ? `${css.td}` : css.td}`}>
           <p className={css.p}>
             {currency}
             {total}

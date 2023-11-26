@@ -1,0 +1,247 @@
+/* X OR WIDTH % */
+
+.quarterX {
+  width: 25%;
+}
+
+.halfX {
+  width: 50%;
+}
+
+.thirdX {
+  width: 33%;
+}
+
+.wholeX {
+  width: 100%;
+}
+
+.twoThirdX {
+  width: 66%;
+}
+
+.halfQuarterX {
+  width: 75%;
+}
+
+.ninetyX {
+  width: 90%;
+}
+
+.eightyX {
+  width: 80;
+}
+
+/* Y OR HEIGHTS % */
+
+.quarterY {
+  height: 25%;
+}
+
+.halfY {
+  height: 50%;
+}
+
+.thirdY {
+  height: 33%;
+}
+
+.wholeY {
+  height: 100%;
+}
+
+.twoThirdY {
+  height: 66%;
+}
+
+.halfQuarterY {
+  height: 75%;
+}
+
+.eightyY {
+  height: 80;
+}
+
+.ninetyY {
+  height: 90%;
+}
+
+/* GENERAL X OR WIDTH */
+
+.xsmX {
+  width: 0.2rem;
+}
+
+.smX {
+  width: 0.5rem;
+}
+
+.mdX {
+  width: 1rem;
+}
+
+.lgX {
+  width: 1.5rem;
+}
+
+.xlX {
+  width: 2rem;
+}
+
+.xxlX {
+  width: 3rem;
+}
+
+/* GENERAL Y OR HEIGHT */
+
+.xsmY {
+  height: 0.2rem;
+}
+
+.smY {
+  height: 0.5rem;
+}
+
+.mdY {
+  height: 1rem;
+}
+
+.lgY {
+  height: 1.5rem;
+}
+
+.xlY {
+  height: 2rem;
+}
+
+.xxlY {
+  height: 3rem;
+}
+
+/* Pixel WIDTHS, Mostly For Configuring Borders or Others */
+
+.xsmPX {
+  width: 1px;
+}
+
+.smPX {
+  width: 2px;
+}
+
+.mdPX {
+  width: 4px;
+}
+
+.lgPX {
+  width: 6px;
+}
+
+.xlgPX {
+  width: 8px;
+}
+
+.xxlgPX {
+  width: 10px;
+}
+
+/* Pixesl HEIGHTS, mostly for Configuring Borders or Buttons. */
+
+.xsmPY {
+  height: 1px;
+}
+
+.smPY {
+  height: 2px;
+}
+
+.mdPY {
+  height: 4px;
+}
+
+.lgPY {
+  height: 6px;
+}
+
+.xlgPY {
+  height: 8px;
+}
+
+.xxlgPY {
+  height: 10px;
+}
+
+/* View WIDTHS */
+
+.xsmVX {
+  width: 5vw;
+}
+
+.smVX {
+  width: 10vw;
+}
+
+.mdVX {
+  width: 20vw;
+}
+
+.quarterVX {
+  width: 25vw;
+}
+
+.lgVX {
+  width: 30vw;
+}
+
+.thirdVX {
+  width: 25vw;
+}
+
+.xlgVX {
+  width: 50vw;
+}
+
+.xxlgVX {
+  width: 75vw;
+}
+
+.fullVX {
+  width: 100vw;
+}
+
+/* VIEW HEIGHTS */
+
+.xsmVY {
+  height: 5vw;
+}
+
+.smVY {
+  height: 10vw;
+}
+
+.mdVY {
+  height: 20vw;
+}
+
+.quarterVY {
+  height: 25vw;
+}
+
+.lgVY {
+  height: 30vw;
+}
+
+.thirdVY {
+  height: 33vw;
+}
+
+.xlgVY {
+  height: 50vw;
+}
+
+.xxlgVY {
+  height: 75vw;
+}
+
+.wholeVY {
+  height: 100vw;
+}

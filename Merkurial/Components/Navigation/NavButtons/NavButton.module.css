@@ -1,0 +1,24 @@
+.navButtonsContainer {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-color: antiquewhite;
+  background-color: brown;
+  
+}
+
+.navButton {
+  height: 50px;
+  margin-left: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.navButtonDropped {
+  height: 3.5rem;
+  width: 5rem;
+  border-radius: 8px;
+  background-color: brown;
+  color: rgb(186, 166, 166);
+  font-weight: bold;
+}

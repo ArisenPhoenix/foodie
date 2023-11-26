@@ -1,0 +1,80 @@
+.fixed,
+.auto {
+  width: 100%;
+}
+
+.fixed {
+  table-layout: fixed;
+  border-radius: inherit;
+}
+
+.auto {
+  table-layout: auto;
+  border-radius: inherit;
+}
+
+.color1 {
+  background-color: rgb(174, 151, 18);
+  font-size: larger;
+}
+
+.color2 {
+  background-color: rgb(121, 8, 8);
+  font-size: larger;
+}
+
+.color3 {
+  background-color: rgba(205, 136, 9, 0.495);
+}
+
+.color5 {
+  background-color: rgb(165, 42, 42);
+}
+
+.color6 {
+  background-color: rgb(47, 79, 79);
+}
+
+.color7 {
+  background-color: rgb(210, 105, 30);
+}
+
+.half {
+  width: 50%;
+}
+
+.halfPlus {
+  width: 75%;
+}
+
+.halfMinus {
+  width: 25%;
+}
+
+.smallRowHeight {
+  height: 2rem;
+}
+
+.medRowHeight {
+  height: 3rem;
+}
+
+.largeRowHeight {
+  height: 2rem;
+}
+
+.removeBorder {
+  border: none !important;
+}
+
+@media screen and (min-width: 2000) {
+  .largeRowHeight {
+    height: 5rem;
+  }
+}
+
+@media screen and (min-width: 4000) {
+  .largeRowHeight {
+    height: 10;
+  }
+}

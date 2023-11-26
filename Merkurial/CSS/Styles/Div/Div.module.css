@@ -1,0 +1,120 @@
+/* .glass Transparent Glass Like Card or Other */
+.glass {
+  background: inherit;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  margin: auto;
+}
+
+.glass:before {
+  content: “ ”;
+  background: inherit;
+  position: absolute;
+  box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.3);
+  filter: blur(10px);
+  z-index: 5;
+}
+
+/* .paragraph is for actually creating paragraph text */
+.paragraph {
+  text-indent: 0.5rem;
+  text-align: left;
+}
+
+/* .stained glass is similar to glass but add a color with high transparency for beautiful 
+visual effects */
+
+.stained {
+  margin: 0;
+  padding: 0;
+  background: inherit;
+  overflow: hidden;
+  z-index: 5;
+  margin: auto;
+}
+
+.stained:before {
+  content: “ ”;
+  background: inherit;
+  box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.3);
+  filter: blur(10px);
+  z-index: 5;
+}
+
+/* General text container for allowing white space */
+.textContainer {
+  padding: 2%;
+  margin: 1%;
+}
+
+/* For removing white space */
+
+.zero {
+  margin: 0;
+  padding: 0;
+}
+
+.full {
+  width: 100vw;
+  height: 100vh;
+}
+
+.center,
+.centerAll {
+  margin: auto;
+}
+
+.centerAll {
+  text-align: center;
+}
+
+.mdForm {
+  width: 80%;
+  padding: 2%;
+}
+
+.buttonDiv {
+  width: 100%;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.form {
+  width: 50%;
+  padding: 1%;
+  margin: auto 2% auto 2%;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.block {
+  display: block !important;
+}
+
+@media screen and (max-width: 400px) {
+  .form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .form {
+    width: 55%;
+  }
+}

@@ -1,0 +1,60 @@
+.dropDownButtonDiv {
+  padding: 0;
+}
+
+.dropDownContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.navItemDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notDropDownContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.dropDownNavsContainer {
+  width: 100%;
+  position: absolute;
+  top: 8vh;
+  left: 0;
+}
+
+/* .button1 {
+  border-top-right-radius: -20px !important;
+  border-top-left-radius: -20px !important;
+  border-top-style: solid;
+  border-width: 0.1px;
+  border-top-color: palevioletred;
+} */
+
+.button1 {
+  background: rgba(226, 111, 149, 0.112);
+  /* position: relative; */
+  /* width: 100%; */
+  /* display: inline-block; */
+}
+
+.button1:before {
+  background: white;
+  border-radius: 0 60px 60px 0 / 0 300px 300px 0;
+  display: inline-block;
+  content: "";
+}
+
+.button1:after {
+  background: white;
+  border-radius: 60px 0 0 60px / 300px 0 0 300px;
+  display: inline-block;
+  content: "";
+  position: relative;
+  left: 40px;
+}

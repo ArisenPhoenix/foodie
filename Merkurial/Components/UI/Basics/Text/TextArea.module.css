@@ -1,0 +1,10 @@
+.frosty {
+  text-align: center;
+}
+
+.textArea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  text-align: left !important;
+}

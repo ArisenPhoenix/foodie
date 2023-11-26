@@ -1,0 +1,46 @@
+.colors:root {
+  --black: black;
+  --white: white;
+  --gold: rgb(234, 200, 5);
+  --silver: rgba(195, 195, 195, 0.817);
+  --orange: rgb(228, 152, 11);
+  --hotPink: rgb(255, 79, 167);
+  --pink: rgb(238, 126, 163);
+  --blue: rgba(8, 68, 232, 0.76);
+  --green: rgba(7, 171, 7, 0.845);
+  --purple: rgba(109, 0, 192, 0.809);
+  --lightPurple: rgb(121, 56, 253);
+  --mist: rgba(128, 128, 128, 0.476);
+  --wine: rgba(194, 2, 2, 0.743);
+
+  /*  */
+
+  /*  */
+
+  /*  */
+
+  --blackGlass: rgba(0, 0, 0, 0.081);
+  --whiteGlass: rgba(255, 255, 255, 0.301);
+  --goldGlass: rgba(234, 200, 5, 0.863);
+  --silverGlass: rgba(195, 195, 195, 0.265);
+  --orangeGlass: rgba(228, 152, 11, 0.149);
+  --hotPinkGlass: rgba(255, 79, 167, 0.142);
+  --pinkGlass: rgba(238, 126, 163, 0.216);
+  --blueGlass: rgba(8, 68, 232, 0.26);
+  --greenGlass: rgba(7, 171, 7, 0.845);
+  --purpleGlass: rgba(109, 0, 192, 0.224);
+  --lightPurpleGlass: rgba(122, 56, 253, 0.262);
+  --mistGlass: rgba(128, 128, 128, 0.204);
+  --wineGlass: rgba(194, 2, 2, 0.197);
+
+  /*  */
+
+  /*  */
+
+  /*  */
+
+  /* Sizes */
+  --navHeight: 5rem;
+  --navTextSize: 3rem;
+  --footerHeight: 3rem;
+}

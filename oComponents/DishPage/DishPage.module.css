@@ -1,5 +1,6 @@
 .buttonContainer {
   display: block !important;
+
   margin-bottom: 50px;
 }
 
@@ -9,15 +10,18 @@
 }
 
 .buttonEdit {
+  float: left !important;
   width: 35% !important;
 }
 
 .buttonEdit,
 .buttonDelete {
   background-color: darkmagenta !important;
+  width: 50px;
 }
 
 .buttonContainer {
+  margin-top: 50px !important;
   display: block;
   width: 90%;
   margin: auto;

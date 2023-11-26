@@ -1,0 +1,33 @@
+.container {
+    display: inline-flex;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    align-self: center;
+    float: right;
+    width: 100%;
+}
+
+.left, .right {
+    width: 100px;
+    background-color: pink;
+}
+
+
+.left, .center, .right {
+    height: 50px;
+}
